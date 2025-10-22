@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CaramelGame.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f2f0af89ab72f9d4c82794e84ef3da41, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 3f1c36d89d4e65e4d900659f1de86851, type: 2}

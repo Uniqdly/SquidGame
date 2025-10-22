@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|c:\\users\\yuryc\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\squidgame\\assets\\scripts\\games\\gametimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\games\\gametimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\games\\positionbasedrlgcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\games\\positionbasedrlgcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\games\\leveltimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\games\\leveltimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GazeInputManager.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
+              "ToolTip": "C:\\Users\\yuryc\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAlwDYAAADgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T12:23:23.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "levelTimer.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\levelTimer.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Games\\levelTimer.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\levelTimer.cs",
+              "RelativeToolTip": "Assets\\scripts\\Games\\levelTimer.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T09:01:18.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameTimer.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\GameTimer.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Games\\GameTimer.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\GameTimer.cs",
+              "RelativeToolTip": "Assets\\scripts\\Games\\GameTimer.cs",
+              "ViewState": "AgIAANwAAAAAAAAAAAAqwPgAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T08:32:45.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PositionBasedRLGController.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\PositionBasedRLGController.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Games\\PositionBasedRLGController.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\PositionBasedRLGController.cs",
+              "RelativeToolTip": "Assets\\scripts\\Games\\PositionBasedRLGController.cs",
+              "ViewState": "AgIAAN0BAAAAAAAAAAAhwPEBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T09:23:35.843Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

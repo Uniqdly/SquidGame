@@ -49,6 +49,7 @@ public class PositionBasedRLGController : MonoBehaviour
     public float startRectDepth = 0.5f;
     public float finishRectHalfWidth = 6f;
     public float finishRectDepth = 0.5f;
+    public bool HasFinished { get { return hasFinished; } }
 
     [Header("Light & doll")]
     public Color greenColor = new Color(0.7f, 1f, 0.7f);
@@ -88,7 +89,7 @@ public class PositionBasedRLGController : MonoBehaviour
 
     bool hasCrossedStart = false;
     bool hasFinished = false;
-    bool playerDead = false;
+    public bool playerDead = false;
 
     Vector3 startPos;
     Vector3 startNormal;
@@ -111,7 +112,7 @@ public class PositionBasedRLGController : MonoBehaviour
         if (directionalLight == null) directionalLight = RenderSettings.sun;
         posBuffer = new Vector3[Mathf.Max(1, smoothingFrames)];
     }
-
+    public bool IsPlayerDead() { return playerDead; }
     void Start()
     {
         if (playerRoot == null && Camera.main != null) playerRoot = Camera.main.transform;
@@ -482,19 +483,18 @@ public class PositionBasedRLGController : MonoBehaviour
         hasCrossedStart = true;
     }
 
-    void OnFinishCrossed(string reason)
+    public void OnFinishCrossed(string reason)
     {
         if (debugLogs) Debug.Log($"[PBL] Finish crossed ({reason})");
         if (statusText != null) statusText.text = "Finished!";
         hasFinished = true;
-        StartCoroutine(WinAndRestart());
-    }
 
-    IEnumerator WinAndRestart()
-    {
-        if (statusText != null) statusText.text = "You Win!";
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        var gt = FindObjectOfType<GameTimer>();
+        if (gt != null)
+        {
+            gt.OnFinishReached(); 
+        }
+
     }
 
     bool IsInsideRect(Vector3 worldPoint, Transform rectTransform, float halfWidth, float depth)
