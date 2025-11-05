@@ -3,23 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|c:\\users\\yuryc\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\squidgame\\assets\\dollbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\dollbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|c:\\users\\yuryc\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\squidgame\\assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|c:\\users\\yuryc\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\squidgame\\assets\\scripts\\caramelgame skript\\stampcontour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\stampcontour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\levelTimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Games\\levelTimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\candyholdface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\candyholdface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\GameTimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Games\\GameTimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CandyHoldFixed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\CaramelGame Skript\\CandyHoldFixed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\PositionBasedRLGController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Games\\PositionBasedRLGController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutGameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\CaramelGame Skript\\CutGameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutPoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\CaramelGame Skript\\CutPoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,63 +43,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DollBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\DollBehavior.cs",
-              "RelativeDocumentMoniker": "Assets\\DollBehavior.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\DollBehavior.cs",
-              "RelativeToolTip": "Assets\\DollBehavior.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA+AAAAAAAAAA==",
+              "Title": "CutChecker.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAUwLUAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T08:00:49.606Z",
+              "WhenOpened": "2025-11-04T10:29:44.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GazeInputManager.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
-              "ToolTip": "C:\\Users\\yuryc\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\VRFramework\\SquidGame2\\Assets\\Samples\\XR Interaction Toolkit\\2.3.2\\Starter Assets\\Scripts\\GazeInputManager.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAlwDYAAADgAAAAAAAAAA==",
+              "Title": "StampContour.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T12:23:23.563Z"
+              "WhenOpened": "2025-11-04T10:25:41.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "levelTimer.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\levelTimer.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Games\\levelTimer.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\levelTimer.cs",
-              "RelativeToolTip": "Assets\\scripts\\Games\\levelTimer.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAowA8AAAAaAAAAAAAAAA==",
+              "Title": "CandyHoldFace.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CandyHoldFace.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CandyHoldFace.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CandyHoldFace.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\CandyHoldFace.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAowHAAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T09:01:18.523Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameTimer.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\GameTimer.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Games\\GameTimer.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\GameTimer.cs",
-              "RelativeToolTip": "Assets\\scripts\\Games\\GameTimer.cs",
-              "ViewState": "AgIAANwAAAAAAAAAAAAqwPgAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T08:32:45.832Z"
+              "WhenOpened": "2025-11-04T09:06:46.791Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PositionBasedRLGController.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\PositionBasedRLGController.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Games\\PositionBasedRLGController.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Games\\PositionBasedRLGController.cs",
-              "RelativeToolTip": "Assets\\scripts\\Games\\PositionBasedRLGController.cs",
-              "ViewState": "AgIAAN0BAAAAAAAAAAAhwPEBAAAFAAAAAAAAAA==",
+              "Title": "TwoHandedGrabMoveProvider.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAewIsAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T09:23:35.843Z"
+              "WhenOpened": "2025-11-04T07:06:07.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CandyHoldFixed.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CandyHoldFixed.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CandyHoldFixed.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CandyHoldFixed.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\CandyHoldFixed.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:27:59.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CutGameManager.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutGameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CutGameManager.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutGameManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\CutGameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T17:03:35.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CutPoint.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutPoint.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CutPoint.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutPoint.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\CutPoint.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T17:02:14.541Z",
+              "EditorCaption": ""
             }
           ]
         }

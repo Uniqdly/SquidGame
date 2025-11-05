@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/RedGreen_RedLightGreenLight.unity
+- path: Assets/Scenes/CaramelGame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
