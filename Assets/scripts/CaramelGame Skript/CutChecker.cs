@@ -1,6 +1,8 @@
-using UnityEngine;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor.Timeline.Actions;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(StampContour))]
 public class CutChecker : MonoBehaviour
@@ -34,6 +36,10 @@ public class CutChecker : MonoBehaviour
     public AudioClip breakSound;
     public AudioClip playerHitSound;
     public float playerKillDelay = 0.6f;
+
+    [Header("Restart")]
+    [Tooltip("ƒополнительна€ задержка перед перезапуском сцены после death-handling")]
+    public float restartDelay = 1.5f;
 
     // internal
     private StampContour contour;
@@ -110,7 +116,8 @@ public class CutChecker : MonoBehaviour
         if (Physics.Raycast(r, out hit, rayLength, stampLayer))
         {
             lastContactTime = Time.time;
-            Vector3 localHit = transform.InverseTransformPoint(hit.point);
+            // IMPORTANT: use contour.transform for local conversion (contour points are in contour.local space)
+            Vector3 localHit = contour != null ? contour.transform.InverseTransformPoint(hit.point) : transform.InverseTransformPoint(hit.point);
             ProcessHitLocal(localHit, hit.collider);
         }
         else
@@ -125,23 +132,42 @@ public class CutChecker : MonoBehaviour
         UpdateDarknessLerp();
     }
 
-    // --- NEW PUBLIC API used by NeedleCollisionLogger ----------------
-    // NeedleCollisionLogger calls this with a world contact point (ClosestPoint)
+    // public helper used by NeedleCollisionLogger fallback
+    public void NotifyCookieContact()
+    {
+        RegisterMiss("Cookie sustained contact (logger)", true);
+    }
+
+    // --- PUBLIC API: ProcessWorldHit overloads ----------------
+    // Called by NeedleCollisionLogger: prefer overload with collider
+    public void ProcessWorldHit(Vector3 worldPoint, Collider hitCollider)
+    {
+        if (!active || failed) return;
+        if (contour == null) contour = GetComponent<StampContour>();
+        if (contour == null) { Debug.LogWarning("CutChecker.ProcessWorldHit: contour == null"); return; }
+
+        // convert to contour-local
+        Vector3 localHit = contour.transform != null ? contour.transform.InverseTransformPoint(worldPoint) : transform.InverseTransformPoint(worldPoint);
+
+        // If we have a direct collider, try direct handle (this will check exact ContourPoint component)
+        if (hitCollider != null)
+        {
+            bool handled = TryHandleDirectContourCollider(hitCollider);
+            if (handled) return;
+        }
+
+        // also run the distance-based path check (fallback)
+        ProcessHitLocal(localHit, hitCollider);
+    }
+
+    // Backward-compatible single-arg version (calls new overload)
     public void ProcessWorldHit(Vector3 worldPoint)
     {
-        if (contour == null) contour = GetComponent<StampContour>();
-        Vector3 localHit = transform.InverseTransformPoint(worldPoint);
-
-        // try to find collider at that world point (small overlap)
-        Collider hitCollider = null;
-        Collider[] hits = Physics.OverlapSphere(worldPoint, 0.01f, stampLayer);
-        if (hits != null && hits.Length > 0) hitCollider = hits[0];
-
-        ProcessHitLocal(localHit, hitCollider);
+        ProcessWorldHit(worldPoint, null);
     }
     // ------------------------------------------------------------------
 
-    // Existing processing (unchanged behaviour)
+    // Existing processing (distance-based)
     void ProcessHitLocal(Vector3 localHit, Collider hitCollider)
     {
         if (contour == null) { Debug.LogWarning("CutChecker: contour null"); return; }
@@ -156,51 +182,120 @@ public class CutChecker : MonoBehaviour
 
         Debug.Log($"CutChecker: Closest idx {idx} dist {dist:F4} tol {tolerance:F4}");
 
-        if (dist <= tolerance)
+        // check ContourPoint type if present
+        Transform pointTransform = contour.contourPoints[idx];
+        var cp = pointTransform.GetComponent<ContourPoint>();
+        if (cp != null)
         {
-            visited[idx] = true;
-            contour.OnPointTouched(contour.contourPoints[idx]);
-            if (resetMissesOnSuccessfulHit)
+            if (dist <= tolerance)
             {
-                missCount = 0;
-                ApplyDarknessTarget(0f);
+                if (cp.pointType == ContourPoint.PointType.Main)
+                {
+                    // successful hit
+                    if (!visited[idx])
+                    {
+                        visited[idx] = true;
+                        contour.OnPointTouched(pointTransform);
+                        cp.MarkTouchedAsMain();
+                    }
+                    if (resetMissesOnSuccessfulHit)
+                    {
+                        missCount = 0;
+                        ApplyDarknessTarget(0f);
+                    }
+                    CheckCompletion();
+                }
+                else
+                {
+                    // forbidden point -> immediate miss (force)
+                    Debug.LogWarning($"CutChecker: Hit forbidden point type {cp.pointType} -> MISS");
+                    cp.MarkAsMissed();
+                    RegisterMiss($"Hit forbidden point type {cp.pointType} idx={idx} dist={dist:F4}", true);
+                }
             }
-            CheckCompletion();
+            else
+            {
+                // outside tolerance -> miss (normal)
+                RegisterMiss($"OUT_OF_LINE dist={dist:F4}");
+            }
         }
         else
         {
-            RegisterMiss($"OUT_OF_LINE dist={dist:F4}");
-        }
-    }
-
-    void TryHandleDirectContourCollider(Collider hitCollider)
-    {
-        if (hitCollider == null) return;
-        var pointTransform = hitCollider.transform;
-        var sc = GetComponent<StampContour>();
-        if (sc != null && sc.contourPoints.Contains(pointTransform))
-        {
-            int idx = sc.contourPoints.IndexOf(pointTransform);
-            if (idx >= 0 && !visited[idx])
+            // fallback: no ContourPoint component
+            if (dist <= tolerance)
             {
-                visited[idx] = true;
-                sc.OnPointTouched(pointTransform);
+                if (!visited[idx])
+                {
+                    visited[idx] = true;
+                    contour.OnPointTouched(pointTransform);
+                }
                 if (resetMissesOnSuccessfulHit)
                 {
                     missCount = 0;
                     ApplyDarknessTarget(0f);
                 }
                 CheckCompletion();
-                return;
+            }
+            else
+            {
+                RegisterMiss($"OUT_OF_LINE dist={dist:F4}");
+            }
+        }
+    }
+
+    // возвращает true если обработал хит (и дальнейша€ обработка не требуетс€)
+    bool TryHandleDirectContourCollider(Collider hitCollider)
+    {
+        if (hitCollider == null) return false;
+
+        // ѕопробуем найти ContourPoint компонент в родител€х
+        var contourPointComp = hitCollider.GetComponentInParent<ContourPoint>();
+        if (contourPointComp != null)
+        {
+            Transform pt = contourPointComp.transform;
+            var sc = contour;
+            if (sc != null && sc.contourPoints.Contains(pt))
+            {
+                int idx = sc.contourPoints.IndexOf(pt);
+                if (idx >= 0 && !visited[idx])
+                {
+                    // если это запрещЄнный тип Ч промах (force)
+                    if (contourPointComp.pointType != ContourPoint.PointType.Main)
+                    {
+                        contourPointComp.MarkAsMissed();
+                        RegisterMiss($"Direct hit forbidden pointType={contourPointComp.pointType}", true);
+                        return true; // обработали Ч это промах
+                    }
+
+                    // основной контур Ч успешный хит
+                    visited[idx] = true;
+                    sc.OnPointTouched(pt);
+                    contourPointComp.MarkTouchedAsMain();
+                    if (resetMissesOnSuccessfulHit)
+                    {
+                        missCount = 0;
+                        ApplyDarknessTarget(0f);
+                    }
+                    CheckCompletion();
+                    return true; // обработали Ч успех
+                }
+                else if (idx >= 0 && visited[idx])
+                {
+                    // уже посещЄнна€ точка Ч считаем обработанной, не нужно дальше
+                    return true;
+                }
             }
         }
 
-        RegisterMiss("Hit non-contour collider");
+        // else: не принадлежит нашему списку контурных точек Ч не обработали
+        return false;
     }
 
-    void RegisterMiss(string reason)
+
+    // Register miss; if force==true ignore cooldown (used for forbidden-point direct hits)
+    void RegisterMiss(string reason, bool force = false)
     {
-        if (Time.time - lastMissTime < missCooldown)
+        if (!force && Time.time - lastMissTime < missCooldown)
         {
             Debug.Log($"CutChecker: Miss ignored (cooldown) reason={reason}");
             return;
@@ -275,8 +370,8 @@ public class CutChecker : MonoBehaviour
         failed = true;
         active = false;
 
-        if (breakParticles != null) Instantiate(breakParticles, candyRoot.position, Quaternion.identity);
-        if (breakSound != null) AudioSource.PlayClipAtPoint(breakSound, candyRoot.position);
+        if (breakParticles != null && candyRoot != null) Instantiate(breakParticles, candyRoot.position, Quaternion.identity);
+        if (breakSound != null && candyRoot != null) AudioSource.PlayClipAtPoint(breakSound, candyRoot.position);
 
         if (candyRoot != null) candyRoot.gameObject.SetActive(false);
 
@@ -285,6 +380,7 @@ public class CutChecker : MonoBehaviour
             Instantiate(brokenCandyPrefab, candyRoot.position, candyRoot.rotation);
         }
 
+        // call HandlePlayerHit after playerKillDelay
         Invoke(nameof(HandlePlayerHit), playerKillDelay);
     }
 
@@ -292,10 +388,10 @@ public class CutChecker : MonoBehaviour
     {
         Debug.Log("CutChecker: Handling player hit (kill).");
 
-        if (playerHitSound != null) AudioSource.PlayClipAtPoint(playerHitSound, Camera.main.transform.position);
-
-        // First try: find any MonoBehaviour named "PlayerDeathHandler" and call its OnPlayerKilled method via reflection
+        if (playerHitSound != null && Camera.main != null) AudioSource.PlayClipAtPoint(playerHitSound, Camera.main.transform.position);
         bool invoked = false;
+
+
         var monos = FindObjectsOfType<MonoBehaviour>();
         foreach (var mb in monos)
         {
@@ -313,13 +409,26 @@ public class CutChecker : MonoBehaviour
             }
         }
 
-        if (invoked) return;
-
         // Fallback: disable all XR interactors
         var interactors = FindObjectsOfType<UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor>();
         foreach (var it in interactors) it.enabled = false;
 
         Debug.Log("CutChecker: PlayerDeathHandler not found - disabled interactors as fallback.");
+
+        // Schedule scene restart after restartDelay seconds
+        if (restartDelay >= 0f)
+        {
+            Debug.Log($"CutChecker: Restarting scene in {restartDelay} seconds...");
+            // use Invoke to call RestartNow
+            Invoke(nameof(RestartNow), restartDelay);
+        }
+    }
+
+    void RestartNow()
+    {
+        // simple restart of the active scene
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
     void CheckCompletion()

@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using System.Reflection;
+using UnityEngine;
 
 [ExecuteAlways]
 public class StampContour : MonoBehaviour
@@ -62,15 +63,65 @@ public class StampContour : MonoBehaviour
     {
         if (point == null || touchedPoints.Contains(point)) return;
 
-        var rend = point.GetComponentInChildren<Renderer>();
-        if (rend != null)
+        // ѕопробуем найти ContourPoint на самом объекте точки (или в родителе)
+        var cp = point.GetComponent<ContourPoint>() ?? point.GetComponentInChildren<ContourPoint>();
+        if (cp == null)
         {
-            rend.material.color = touchedColor;
+            // ≈сли нет ContourPoint Ч fallback к старой логике (как раньше)
+            var rendFallback = point.GetComponentInChildren<Renderer>();
+            if (rendFallback != null) rendFallback.material.color = touchedColor;
+            touchedPoints.Add(point);
+            Debug.Log($"[StampContour] Point '{point.name}' touched (no ContourPoint component). ({touchedPoints.Count}/{Count})");
+            return;
         }
 
-        touchedPoints.Add(point);
-        Debug.Log($"[StampContour] Point '{point.name}' touched by needle. ({touchedPoints.Count}/{Count})");
+        if (cp.pointType == ContourPoint.PointType.Main)
+        {
+            // ”спешное попадание по основному контуру
+            cp.MarkTouchedAsMain();
+
+            var rend = point.GetComponentInChildren<Renderer>();
+            if (rend != null) rend.material.color = touchedColor;
+
+            touchedPoints.Add(point);
+            Debug.Log($"[StampContour] Main point '{point.name}' touched. ({touchedPoints.Count}/{Count})");
+        }
+        else
+        {
+            // Ёто внутренн€€ или внешн€€ точка Ч промах
+            cp.MarkAsMissed();
+            Debug.LogWarning($"[StampContour] Forbidden point '{point.name}' touched (type={cp.pointType}). Registering miss.");
+
+            // ѕытаемс€ уведомить CutChecker на том же объекте или в родител€х
+            var checker = GetComponentInParent<CutChecker>();
+            if (checker != null)
+            {
+                // используем €вный метод уведомлени€ дл€ промаха (RegisterMiss с force = true)
+                var mi = checker.GetType().GetMethod("RegisterMiss", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+                if (mi != null)
+                {
+                    // вызов RegisterMiss(reason, true) Ч если метод есть
+                    try
+                    {
+                        mi.Invoke(checker, new object[] { $"Touched forbidden contour point {point.name}", true });
+                    }
+                    catch
+                    {
+                        // fallback Ч если не получилось с force, вызываем публичный NotifyCookieContact
+                        var notify = checker.GetType().GetMethod("NotifyCookieContact", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                        if (notify != null) notify.Invoke(checker, null);
+                    }
+                }
+                else
+                {
+                    // fallback: вызов публичного NotifyCookieContact
+                    var notify = checker.GetType().GetMethod("NotifyCookieContact", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                    if (notify != null) notify.Invoke(checker, null);
+                }
+            }
+        }
     }
+
 
     public Vector3 GetLocalPoint(int index)
     {
