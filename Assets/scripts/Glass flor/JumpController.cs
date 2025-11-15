@@ -4,10 +4,11 @@ using UnityEngine.XR;
 [RequireComponent(typeof(Rigidbody))]
 public class JumpController : MonoBehaviour
 {
-    public PlayerGroundController groundController; // ссылка на твой скрипт ground check
-    public float jumpHeight = 1.0f; // желаемая высота прыжка (метры)
-    public float jumpCooldown = 0.2f; // минимальное время между прыжками
-    public bool useXRPrimaryButton = true; // поддержка XR input
+    public float jumpHeight = 1.2f;
+    public float groundCheckDistance = 0.25f;
+    public LayerMask groundMask;
+    public float jumpCooldown = 0.2f;
+    public bool useXRPrimaryButton = true;
 
     Rigidbody rb;
     float lastJumpTime = -10f;
@@ -15,38 +16,45 @@ public class JumpController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        if (groundController == null) groundController = GetComponent<PlayerGroundController>();
     }
 
     void Update()
     {
-        // тестовый ввод (клавиатура)
-        if (Input.GetButtonDown("Jump"))
-        {
-            TryJump();
-        }
+        bool jumpPressed = Input.GetButtonDown("Jump");
 
-        // XR input (простая поддержка primaryButton на любом устройстве)
         if (useXRPrimaryButton)
         {
-            bool primaryPressed = false;
             var devices = new System.Collections.Generic.List<InputDevice>();
             InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller, devices);
             foreach (var d in devices)
             {
-                if (d.TryGetFeatureValue(CommonUsages.primaryButton, out bool val) && val) { primaryPressed = true; break; }
+                if (d.TryGetFeatureValue(CommonUsages.primaryButton, out bool v) && v)
+                {
+                    jumpPressed = true;
+                    break;
+                }
             }
-            if (primaryPressed) TryJump();
         }
+
+        if (jumpPressed)
+            TryJump();
+    }
+
+    bool IsGrounded()
+    {
+        LayerMask mask = groundMask.value == 0 ? (LayerMask)~0 : groundMask;
+        return Physics.Raycast(transform.position, Vector3.down, groundCheckDistance, mask);
+
     }
 
     void TryJump()
     {
         if (Time.time - lastJumpTime < jumpCooldown) return;
-        if (groundController == null || !groundController.IsGrounded) return;
+        if (!IsGrounded()) return;
 
         float g = Mathf.Abs(Physics.gravity.y);
-        float v = Mathf.Sqrt(2f * g * Mathf.Max(0.01f, jumpHeight)); // v = sqrt(2gh)
+        float v = Mathf.Sqrt(2f * g * jumpHeight);
+
         Vector3 vel = rb.velocity;
         vel.y = v;
         rb.velocity = vel;
