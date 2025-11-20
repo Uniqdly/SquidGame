@@ -60,13 +60,16 @@
     <Compile Include="Assets\GameController_WithLight.cs" />
     <Compile Include="Assets\scripts\CaramelGame Skript\ContourPoint.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\scripts\Glass flor\GlassController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\scripts\Red light Games\GameController.cs" />
     <Compile Include="Assets\Diabolical Games\Destructible Objects\Scripts\Explosion.cs" />
     <Compile Include="Assets\scripts\Red light Games\ControllerVisualizer.cs" />
+    <Compile Include="Assets\scripts\Glass flor\ParabolicJumpSelector.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\scripts\Glass flor\GlassPiece.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\scripts\Red light Games\RedLightGreenLightController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -93,12 +96,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\scripts\CaramelGame Skript\CutChecker.cs" />
+    <Compile Include="Assets\scripts\Glass flor\ParabolicJumpOnGrab.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\scripts\Red light Games\ArmSwingLocomotion.cs" />
     <Compile Include="Assets\scripts\Red light Games\GameTimer.cs" />
     <Compile Include="Assets\LookAtPlayer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\scripts\Glass flor\SimpleDeathOnFloor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -114,9 +119,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\scripts\Red light Games\PositionBasedRLGController.cs" />
-    <Compile Include="Assets\scripts\Glass flor\JumpController.cs" />
-    <Compile Include="Assets\scripts\Glass flor\GlassController.cs" />
-    <Compile Include="Assets\scripts\Glass flor\GlassPiece.cs" />
+    <Compile Include="Assets\scripts\Glass flor\FinishPlatform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

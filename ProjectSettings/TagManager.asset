@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Needle
   - ContourPoint
+  - Floor
   layers:
   - Default
   - TransparentFX
