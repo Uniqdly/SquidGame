@@ -38,10 +38,24 @@ public class PositionBasedRLGController : MonoBehaviour
     public float greenDuration = 7f;
     public float redDuration = 4f;
 
-    [Header("Movement detection")]
+    [Header("Movement detection (player position smoothing)")]
     public int smoothingFrames = 5;
-    public float moveThreshold = 0.06f; // meters (horizontal)
-    public bool ignoreVertical = true;  // compare only XZ
+    public float moveThreshold = 0.06f; // meters (for playerRoot positional movement)
+    public bool ignoreVertical = true;  // compare only XZ for playerRoot movement
+
+    [Header("Controller-based movement (optional)")]
+    [Tooltip("≈сли true Ч движени€ контроллеров будут толкать игрока в пространстве")]
+    public bool useControllerMovement = true;
+    [Tooltip("ѕравый контроллер (можно указать только один из контроллеров)")]
+    public Transform rightController;
+    [Tooltip("Ћевый контроллер (можно указать только один из контроллеров)")]
+    public Transform leftController;
+    [Tooltip("„увствительность: кака€ дол€ перемещени€ контроллера переноситс€ на игрока")]
+    public float controllerMoveFactor = 1.0f;
+    [Tooltip("ѕорог перемещени€ контроллера (в метрах) чтобы начать двигать игрока")]
+    public float controllerMoveThreshold = 0.01f;
+    [Tooltip("≈сли true Ч учитывать вертикальную компоненту контроллера при движении игрока")]
+    public bool controllerAffectsY = true;
 
     [Header("Start/Finish rectangle (fallback)")]
     public bool useRectFallback = true;
@@ -97,11 +111,16 @@ public class PositionBasedRLGController : MonoBehaviour
 
     Vector3 finishPos;
     Vector3 finishNormal;
+    float lastFinishSide = 0f;
 
     Quaternion dollForwardRot;
     Quaternion dollBackRot;
 
     Coroutine lightBlendCoroutine;
+
+    // controller smoothing buffer
+    Vector3[] ctrlBuffer;
+    int ctrlIndex = 0;
 
     // logging internals
     float logTimer = 0f;
@@ -111,6 +130,7 @@ public class PositionBasedRLGController : MonoBehaviour
     {
         if (directionalLight == null) directionalLight = RenderSettings.sun;
         posBuffer = new Vector3[Mathf.Max(1, smoothingFrames)];
+        ctrlBuffer = new Vector3[Mathf.Max(1, smoothingFrames)];
     }
     public bool IsPlayerDead() { return playerDead; }
     void Start()
@@ -119,6 +139,9 @@ public class PositionBasedRLGController : MonoBehaviour
 
         Vector3 initial = (playerRoot != null) ? playerRoot.position : Vector3.zero;
         for (int i = 0; i < posBuffer.Length; i++) posBuffer[i] = initial;
+
+        Vector3 ctrlInit = GetControllersAveragePosition();
+        for (int i = 0; i < ctrlBuffer.Length; i++) ctrlBuffer[i] = ctrlInit;
 
         if (startLineTransform != null)
         {
@@ -132,7 +155,9 @@ public class PositionBasedRLGController : MonoBehaviour
         {
             finishPos = finishLineTransform.position;
             finishNormal = (finishLineTransform.forward.magnitude > 0.001f) ? finishLineTransform.forward.normalized : Vector3.forward;
-            if (debugLogs) Debug.Log($"[PBL] finishPos={finishPos}, finishNormal={finishNormal}");
+            // initialize lastFinishSide analogous to start
+            if (playerRoot != null) lastFinishSide = Mathf.Sign(Vector3.Dot(playerRoot.position - finishPos, finishNormal));
+            if (debugLogs) Debug.Log($"[PBL] finishPos={finishPos}, finishNormal={finishNormal}, lastFinishSide={lastFinishSide}");
         }
 
         if (dollTransform != null)
@@ -191,6 +216,7 @@ public class PositionBasedRLGController : MonoBehaviour
         yield return new WaitForSeconds(gunshotToDeathDelay);
         DoDeath();
     }
+
     void Update()
     {
         Update_DebugInputs();
@@ -219,23 +245,25 @@ public class PositionBasedRLGController : MonoBehaviour
             }
         }
 
-        // FINISH detection
+        // FINISH detection Ч use sign-change logic (safer) + rect fallback
         if (!hasFinished && finishLineTransform != null)
         {
             float currF = Mathf.Sign(Vector3.Dot(playerRoot.position - finishPos, finishNormal));
-            if (currF > 0f)
+            if (lastFinishSide <= 0f && currF > 0f)
             {
                 OnFinishCrossed("plane");
                 hasFinished = true;
             }
-            else if (useRectFallback && IsInsideRect(playerRoot.position, finishLineTransform, finishRectHalfWidth, finishRectDepth))
+            lastFinishSide = currF;
+
+            if (!hasFinished && useRectFallback && IsInsideRect(playerRoot.position, finishLineTransform, finishRectHalfWidth, finishRectDepth))
             {
                 OnFinishCrossed("rectFallback");
                 hasFinished = true;
             }
         }
 
-        // Movement smoothing & detection
+        // Movement smoothing & detection (playerRoot)
         posBuffer[posIndex] = playerRoot.position;
         posIndex = (posIndex + 1) % posBuffer.Length;
 
@@ -246,7 +274,53 @@ public class PositionBasedRLGController : MonoBehaviour
         Vector3 last = posBuffer[(posIndex - 1 + posBuffer.Length) % posBuffer.Length];
         Vector3 a = ignoreVertical ? new Vector3(avg.x, 0f, avg.z) : avg;
         Vector3 l = ignoreVertical ? new Vector3(last.x, 0f, last.z) : last;
-        float moved = Vector3.Distance(a, l);
+        float movedPlayer = Vector3.Distance(a, l);
+
+        // Controller smoothing & detection
+        Vector3 ctrlAvg = Vector3.zero;
+        Vector3 currCtrl = GetControllersAveragePosition();
+        ctrlBuffer[ctrlIndex] = currCtrl;
+        ctrlIndex = (ctrlIndex + 1) % ctrlBuffer.Length;
+        for (int i = 0; i < ctrlBuffer.Length; i++) ctrlAvg += ctrlBuffer[i];
+        ctrlAvg /= ctrlBuffer.Length;
+
+        Vector3 prevCtrl = ctrlBuffer[(ctrlIndex - 1 + ctrlBuffer.Length) % ctrlBuffer.Length];
+        Vector3 ctrlA = ignoreVertical ? new Vector3(ctrlAvg.x, 0f, ctrlAvg.z) : ctrlAvg;
+        Vector3 ctrlL = ignoreVertical ? new Vector3(prevCtrl.x, 0f, prevCtrl.z) : prevCtrl;
+        Vector3 ctrlDelta = ctrlAvg - prevCtrl;
+        float ctrlDeltaMag = ctrlDelta.magnitude;
+
+        // If using controller movement Ч map controller delta into player movement (in camera/gaze space)
+        if (useControllerMovement && (rightController != null || leftController != null))
+        {
+            if (ctrlDeltaMag >= controllerMoveThreshold)
+            {
+                // Map controller world delta into camera local space, then build movement in world aligned with camera forward/right/up
+                Transform cam = Camera.main != null ? Camera.main.transform : playerRoot;
+                Vector3 localDelta = cam.InverseTransformVector(ctrlDelta); // controller delta in camera local space
+                Vector3 moveWorld = Vector3.zero;
+                // forward/backwards (local Z) -> camera forward
+                moveWorld += cam.forward * localDelta.z;
+                // lateral (local X)
+                moveWorld += cam.right * localDelta.x;
+                // vertical: allow optional mapping to world up
+                if (controllerAffectsY)
+                    moveWorld += cam.up * localDelta.y;
+
+                // apply factor and translate playerRoot (preserve Y if you don't want vertical)
+                Vector3 apply = moveWorld * controllerMoveFactor;
+                // If you want to keep player on ground, zero Y unless controllerAffectsY
+                if (!controllerAffectsY) apply.y = 0f;
+
+                playerRoot.position += apply;
+                // also update posBuffer immediate to avoid false big "movedPlayer" detection next frame
+                posBuffer[posIndex] = playerRoot.position;
+            }
+        }
+
+        // Combined moved to consider for RED detection: take the max of player-root motion and controller delta magnitude (projected if ignoreVertical)
+        float movedForDetection = movedPlayer;
+        if (ctrlDeltaMag > movedForDetection) movedForDetection = ctrlDeltaMag;
 
         // logging movement (periodic)
         if (enableMovementLogging)
@@ -254,8 +328,8 @@ public class PositionBasedRLGController : MonoBehaviour
             logTimer -= Time.deltaTime;
             if (logTimer <= 0f)
             {
-                string s = $"[MoveLog] t={Time.time:F2} moved={moved:F4} isGreen={isGreen} crossedStart={hasCrossedStart} finished={hasFinished}";
-                Debug.Log(s);
+                string s = $"[MoveLog] t={Time.time:F2} movedPlayer={movedPlayer:F4} ctrlDelta={ctrlDeltaMag:F4} isGreen={isGreen} crossedStart={hasCrossedStart} finished={hasFinished}";
+                if (debugLogs) Debug.Log(s);
                 if (storeMovementLog) movementLog.Add(s);
                 logTimer = Mathf.Max(0.01f, logInterval);
             }
@@ -264,18 +338,17 @@ public class PositionBasedRLGController : MonoBehaviour
         // Only kill when RED & started & not finished
         if (!isGreen && hasCrossedStart && !hasFinished)
         {
-            if (moved > moveThreshold)
+            if (movedForDetection > moveThreshold)
             {
-                if (debugLogs) Debug.Log($"[PBL] Movement detected on RED. moved={moved:F3}, threshold={moveThreshold}");
+                if (debugLogs) Debug.Log($"[PBL] Movement detected on RED. movedForDetection={movedForDetection:F3}, threshold={moveThreshold}");
                 PlayGunshotAndDie();
             }
-
         }
 
         // UI debug text
         if (debugText != null)
         {
-            debugText.text = $"green={isGreen}\ncrossedStart={hasCrossedStart}\nfinished={hasFinished}\nmoved={moved:F3}";
+            debugText.text = $"green={isGreen}\ncrossedStart={hasCrossedStart}\nfinished={hasFinished}\nplayerMoved={movedPlayer:F3}\nctrlDelta={ctrlDeltaMag:F3}";
         }
 
         // Doll smoothing rotation
@@ -285,9 +358,8 @@ public class PositionBasedRLGController : MonoBehaviour
             dollTransform.rotation = Quaternion.Slerp(dollTransform.rotation, target, Time.deltaTime * dollTurnSpeed);
         }
     }
-    // ---- DEBUG BLOCK START ----
-    // ¬ставь этот код внутрь класса (PositionBasedRLGController), например внизу файла.
 
+    // ---- DEBUG BLOCK START ----
     [Header("DEBUG Helpers")]
     public bool debugVerbose = true;
     public KeyCode debugForceStartKey = KeyCode.F1;   // вручную отметить старт
@@ -312,7 +384,7 @@ public class PositionBasedRLGController : MonoBehaviour
         if (finishLineTransform != null)
         {
             float dotF = Vector3.Dot(playerRoot.position - finishPos, finishNormal);
-            s += $", finishPos={finishPos.ToString("F3")}, finishDot={dotF:F4}";
+            s += $", finishPos={finishPos.ToString("F3")}, finishDot={dotF:F4}, lastFinishSide={lastFinishSide}";
         }
         s += $", hasCrossedStart={hasCrossedStart}, hasFinished={hasFinished}, isGreen={isGreen}";
         Debug.Log(s);
@@ -340,10 +412,15 @@ public class PositionBasedRLGController : MonoBehaviour
         if (finishLineTransform != null)
         {
             float currF = Mathf.Sign(Vector3.Dot(playerRoot.position - finishPos, finishNormal));
-            Debug.Log($"[DBG] Manual finish check currF={currF}");
-            if (currF > 0f || (useRectFallback && IsInsideRect(playerRoot.position, finishLineTransform, finishRectHalfWidth, finishRectDepth)))
+            Debug.Log($"[DBG] Manual finish check currF={currF}, lastFinishSide={lastFinishSide}");
+            if (lastFinishSide <= 0f && currF > 0f)
             {
-                OnFinishCrossed("manual_check");
+                OnFinishCrossed("manual_check_plane");
+                hasFinished = true;
+            }
+            else if (useRectFallback && IsInsideRect(playerRoot.position, finishLineTransform, finishRectHalfWidth, finishRectDepth))
+            {
+                OnFinishCrossed("manual_check_rect");
                 hasFinished = true;
             }
         }
@@ -492,9 +569,20 @@ public class PositionBasedRLGController : MonoBehaviour
         var gt = FindObjectOfType<GameTimer>();
         if (gt != null)
         {
-            gt.OnFinishReached(); 
+            gt.OnFinishReached();
         }
 
+    }
+
+    // helper: return averaged controller world position (right+left if present)
+    Vector3 GetControllersAveragePosition()
+    {
+        Vector3 sum = Vector3.zero;
+        int cnt = 0;
+        if (rightController != null) { sum += rightController.position; cnt++; }
+        if (leftController != null) { sum += leftController.position; cnt++; }
+        if (cnt == 0) return playerRoot != null ? playerRoot.position : Vector3.zero;
+        return sum / cnt;
     }
 
     bool IsInsideRect(Vector3 worldPoint, Transform rectTransform, float halfWidth, float depth)

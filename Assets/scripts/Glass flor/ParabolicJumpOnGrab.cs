@@ -22,9 +22,19 @@ public class ParabolicJumpOnGrab : MonoBehaviour
     public float groundCheckDistance = 0.25f;
     public LayerMask groundMask = ~0;
 
+    [Header("Jump Cooldown")]
+    public float jumpCooldown = 1.0f;   // задержка между прыжками (сек)
+    float lastJumpTime = -999f;
+
     [Header("Player (to move)")]
     public Transform playerRoot;
     public Rigidbody playerRigidbody;
+
+    [Header("Landing / pause")]
+    [Tooltip("¬ертикальный оффсет от поверхности при посадке (м)")]
+    public float landingYOffset = 0.05f;
+    [Tooltip("¬рем€ в секундах, которое игрок будет замирать на центре платформы после приземлени€")]
+    public float landingPause = 0.18f;
 
     [Header("Highlighting")]
     public bool enableHighlight = true;
@@ -68,8 +78,26 @@ public class ParabolicJumpOnGrab : MonoBehaviour
         {
             if (highlighted != null)
             {
-                if (requireGrounded && !IsGrounded()) { prevJump = jumpPressed; return; }
-                StartCoroutine(ParabolicJumpTo(highlighted.transform));
+                // провер€ем cooldown между прыжками
+                if (Time.time - lastJumpTime < jumpCooldown)
+                {
+                    float wait = jumpCooldown - (Time.time - lastJumpTime);
+                    Debug.Log($"[PJ] Jump on cooldown: wait {wait:F2}s");
+                }
+                else if (requireGrounded && !IsGrounded())
+                {
+                    prevJump = jumpPressed; // сохран€ем текущее состо€ние
+                    Debug.Log("[PJ] Grounded check failed, not jumping");
+                }
+                else
+                {
+                    lastJumpTime = Time.time;
+                    StartCoroutine(ParabolicJumpTo(highlighted.transform));
+                }
+            }
+            else
+            {
+                Debug.Log("[PJ] Jump pressed but nothing highlighted");
             }
         }
 
@@ -250,12 +278,9 @@ public class ParabolicJumpOnGrab : MonoBehaviour
         }
 
         // финальна€ позици€ Ч немного выше поверхности, чтобы избежать пересечени€
-        float landingYOffset = 0.05f;
-        // если у нас нашли bounds Ч используем верхнюю границу bounds.max.y как поверхность (точнее)
+        float surfaceY = float.MinValue;
         if (foundBounds)
         {
-            float surfaceY = float.MinValue;
-            // если был renderer Ч surface is renderer.bounds.max.y, иначе collider.bounds.max.y
             var finalRend = target.GetComponentInParent<Renderer>();
             if (finalRend != null)
                 surfaceY = finalRend.bounds.max.y;
@@ -265,28 +290,37 @@ public class ParabolicJumpOnGrab : MonoBehaviour
                 if (finalCol != null)
                     surfaceY = finalCol.bounds.max.y;
             }
-
-            if (surfaceY != float.MinValue)
-            {
-                Vector3 finalPos = new Vector3(center.x, surfaceY + landingYOffset, center.z);
-                playerRoot.position = finalPos;
-            }
-            else
-            {
-                playerRoot.position = new Vector3(endPos.x, endPos.y + landingYOffset, endPos.z);
-            }
         }
+
+        Vector3 finalPos;
+        if (surfaceY != float.MinValue)
+            finalPos = new Vector3(center.x, surfaceY + landingYOffset, center.z);
         else
+            finalPos = new Vector3(endPos.x, endPos.y + landingYOffset, endPos.z);
+
+        // сразу ставим позицию Ч игрок оказываетс€ в центре платформы
+        playerRoot.position = finalPos;
+
+        // --- ѕј”«ј: игрок замирает на центре платформы на landingPause секунд ---
+        if (landingPause > 0f)
         {
-            playerRoot.position = new Vector3(endPos.x, endPos.y + landingYOffset, endPos.z);
+            yield return new WaitForSeconds(landingPause);
         }
 
-        // восстановление Rigidbody
+        // --- затем ждЄм один физический шаг и стабилизируем Rigidbody, чтобы избежать подпрыгов ---
         if (hadRb)
         {
-            playerRigidbody.isKinematic = false;
+            yield return new WaitForFixedUpdate();
+
             playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.angularVelocity = Vector3.zero;
+            playerRigidbody.Sleep();
+
             playerRigidbody.collisionDetectionMode = prevMode;
+            playerRigidbody.isKinematic = false;
+
+            playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.angularVelocity = Vector3.zero;
         }
 
         // обработка по типу платформы (если это FinishPlatform или GlassPiece)
@@ -308,6 +342,4 @@ public class ParabolicJumpOnGrab : MonoBehaviour
 
         busy = false;
     }
-
-
 }

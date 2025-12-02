@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &48927870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3414492871629994245, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1512947713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b94c4c83dec6a94fbaebf543478259e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &99024439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,8 +1047,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225617870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: 4}
-  m_LocalScale: {x: 10, y: 0.1, z: 0.080000006}
+  m_LocalPosition: {x: 0, y: 0.01, z: 3.6}
+  m_LocalScale: {x: 10, y: 0.1, z: 0.08}
   m_Children: []
   m_Father: {fileID: 2055903774}
   m_RootOrder: 4
@@ -1091,6 +1102,12 @@ MonoBehaviour:
   smoothingFrames: 5
   moveThreshold: 0.003
   ignoreVertical: 1
+  useControllerMovement: 1
+  rightController: {fileID: 960998805}
+  leftController: {fileID: 779287537}
+  controllerMoveFactor: 1
+  controllerMoveThreshold: 0.01
+  controllerAffectsY: 1
   useRectFallback: 1
   startRectHalfWidth: 6
   startRectDepth: 0.5
@@ -1621,6 +1638,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2140833953817275108, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_LeftGrabMoveProvider
+      value: 
+      objectReference: {fileID: 48927870}
     - target: {fileID: 3127728406573987373, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
       value: 2.828
@@ -1778,7 +1799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525882042}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.125, z: 0.82}
+  m_LocalPosition: {x: 0, y: -0.125, z: 0.041}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2023181644}
@@ -2100,15 +2121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2620975524404474784, guid: 3fb41efb2914c9f419fcc7156e6b30f6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2620975524404474784, guid: 3fb41efb2914c9f419fcc7156e6b30f6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2620975524404474784, guid: 3fb41efb2914c9f419fcc7156e6b30f6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2620975524404474784, guid: 3fb41efb2914c9f419fcc7156e6b30f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2120,7 +2141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2620975524404474784, guid: 3fb41efb2914c9f419fcc7156e6b30f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.590773
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2620975524404474784, guid: 3fb41efb2914c9f419fcc7156e6b30f6, type: 3}
       propertyPath: m_LocalRotation.w
