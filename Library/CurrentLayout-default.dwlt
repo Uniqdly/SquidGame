@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 2048
     height: 1060.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 128
+  controlID: 53
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,7 +151,7 @@ MonoBehaviour:
     y: 0
     width: 2048
     height: 1060.8
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 52
+  controlID: 54
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 53
+  controlID: 55
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,9 +318,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.181815, y: 3.2761793, z: -4.898533}
+    m_Target: {x: 0.20710593, y: -9.181979, z: -14.10222}
     speed: 2
-    m_Value: {x: 1.181815, y: 3.2761793, z: -4.898533}
+    m_Value: {x: 0.20710593, y: -9.181979, z: -14.10222}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -367,13 +367,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.01752385, y: -0.02519732, z: 0.005748472, w: -0.9991683}
+    m_Target: {x: -0.0045906687, y: 0.94883096, z: -0.31457695, w: 0.0047547016}
     speed: 2
-    m_Value: {x: 0.01603059, y: -0.025197346, z: 0.0057882005, w: -0.99953717}
+    m_Value: {x: -0.0045923167, y: 0.94917154, z: -0.31468987, w: 0.0047564083}
   m_Size:
-    m_Target: 9.879114
+    m_Target: 9.009999
     speed: 2
-    m_Value: 9.879114
+    m_Value: 9.009999
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -487,22 +487,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/scripts/Red light Games
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/scripts/Red light Games
+  - Assets
   m_LastFoldersGridSize: 57
   m_LastProjectPath: "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 141.39996}
-    m_SelectedIDs: 42500000
-    m_LastClickedID: 20546
-    m_ExpandedIDs: 00000000f44f00003a50000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: a45c0000
+    m_LastClickedID: 23716
+    m_ExpandedIDs: 00000000a45c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -530,7 +530,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f44f0000
+    m_ExpandedIDs: 00000000a45c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,7 +653,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 66fbffff
+      m_ExpandedIDs: b2f9fffff0f9ffff02faffff18faffff66fbffff3e4a00002c4c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.24382079, y: -0.753318, z: 0.46800113, w: 0.3924701}
     speed: 2
-    m_Value: {x: -0.2438208, y: 0.753318, z: -0.46800113, w: -0.39247012}
+    m_Value: {x: 0.24382147, y: -0.7533201, z: 0.46800244, w: 0.3924712}
   m_Size:
     m_Target: 17.67767
     speed: 2
