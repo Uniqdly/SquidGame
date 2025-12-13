@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yuryc\\Downloads\\SquidGame-main (1)\\SquidGame-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9650B0A4-AD13-B989-2E48-63C5EE2CAFA5}|Assembly-CSharp.csproj|c:\\users\\yuryc\\downloads\\squidgame-main (1)\\squidgame-main\\assets\\scripts\\red light games\\positionbasedrlgcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9650B0A4-AD13-B989-2E48-63C5EE2CAFA5}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\red light games\\positionbasedrlgcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PositionBasedRLGController.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\Downloads\\SquidGame-main (1)\\SquidGame-main\\Assets\\scripts\\Red light Games\\PositionBasedRLGController.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Red light Games\\PositionBasedRLGController.cs",
+              "ToolTip": "C:\\Users\\yuryc\\Downloads\\SquidGame-main (1)\\SquidGame-main\\Assets\\scripts\\Red light Games\\PositionBasedRLGController.cs",
+              "RelativeToolTip": "Assets\\scripts\\Red light Games\\PositionBasedRLGController.cs",
+              "ViewState": "AgIAAJABAAAAAAAAAAAuwKUBAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T19:56:43.896Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
