@@ -1,69 +1,55 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
+using UnityEngine.XR.Interaction.Toolkit; // для безопасной деактивации XR перед загрузкой
 
 [DisallowMultipleComponent]
 public class PositionBasedRLGController : MonoBehaviour
 {
-    [Header("Gunshot / Distant death")]
-    [Tooltip("Clip с выстрелом, проигрывается из gunshotOrigin")]
+    [Header("Gunshot (distant death)")]
     public AudioClip gunshotClip;
-    [Tooltip("Позиция, откуда слышен выстрел (размести далеко от игрока, напр. за финишем)")]
     public Transform gunshotOrigin;
-    [Tooltip("Громкость выстрела (0..1)")]
-    [Range(0f, 1f)]
-    public float gunshotVolume = 1f;
-    [Tooltip("Задержка перед смертью после выстрела (сек)")]
+    [Range(0f, 1f)] public float gunshotVolume = 1f;
     public float gunshotToDeathDelay = 0.8f;
-    [Tooltip("Максимальная дистанция, на которой слышен звук (для AudioSource)")]
     public float gunshotMaxDistance = 80f;
-    [Tooltip("Минимальная дистанция в которой звук будет на full volume")]
     public float gunshotMinDistance = 8f;
 
     [Header("References")]
-    public Transform playerRoot;               // XR Origin or camera transform
+    public Transform playerRoot;      // XR origin or camera
     public Transform startLineTransform;
     public Transform finishLineTransform;
     public Transform dollTransform;
     public Light directionalLight;
 
-    [Header("UI (optional)")]
-    public TextMeshProUGUI statusText;
-    public TextMeshProUGUI debugText;
-
-    [Header("Gameplay times")]
+    [Header("Gameplay timings")]
     public float startDelay = 1.5f;
     public float greenDuration = 7f;
     public float redDuration = 4f;
+    [Tooltip("Секунд до перезапуска сцены после смерти")]
+    public float deathRestartDelay = 2f;
+    [Tooltip("Задержка перед загрузкой следующей сцены при пересечении финиша")]
+    public float finishLoadDelay = 0.15f;
 
-    [Header("Movement detection (player position smoothing)")]
+    [Header("Movement detection")]
     public int smoothingFrames = 5;
-    public float moveThreshold = 0.06f; // meters (for playerRoot positional movement)
-    public bool ignoreVertical = true;  // compare only XZ for playerRoot movement
+    public float moveThreshold = 0.06f;
+    public bool ignoreVertical = true;
 
-    [Header("Controller-based movement (optional)")]
-    [Tooltip("Если true — движения контроллеров будут толкать игрока в пространстве")]
+    [Header("Controller movement (optional)")]
     public bool useControllerMovement = true;
-    [Tooltip("Правый контроллер (можно указать только один из контроллеров)")]
     public Transform rightController;
-    [Tooltip("Левый контроллер (можно указать только один из контроллеров)")]
     public Transform leftController;
-    [Tooltip("Чувствительность: какая доля перемещения контроллера переносится на игрока")]
     public float controllerMoveFactor = 1.0f;
-    [Tooltip("Порог перемещения контроллера (в метрах) чтобы начать двигать игрока")]
     public float controllerMoveThreshold = 0.01f;
-    [Tooltip("Если true — учитывать вертикальную компоненту контроллера при движении игрока")]
     public bool controllerAffectsY = true;
 
-    [Header("Start/Finish rectangle (fallback)")]
+    [Header("Start/Finish rect fallback")]
     public bool useRectFallback = true;
     public float startRectHalfWidth = 6f;
     public float startRectDepth = 0.5f;
     public float finishRectHalfWidth = 6f;
     public float finishRectDepth = 0.5f;
-    public bool HasFinished { get { return hasFinished; } }
+    public bool HasFinished => hasFinished;
 
     [Header("Light & doll")]
     public Color greenColor = new Color(0.7f, 1f, 0.7f);
@@ -71,60 +57,46 @@ public class PositionBasedRLGController : MonoBehaviour
     public float greenIntensity = 1.2f;
     public float redIntensity = 0.8f;
     public float lightBlendDuration = 0.5f;
-    public float dollTurnSpeed = 6f;
+    [Tooltip("Длительность полного поворота куклы в секундах (изменяй тут).")]
+    public float dollTurnDuration = 0.5f; // <- изменяй эту переменную для настройки времени поворота
     public float dollBackYaw = 180f;
 
-    [Header("Death / Ragdoll")]
-    [Tooltip("Компоненты, которые следует отключить при смерти (CharacterController, locomotion scripts и т.п.)")]
-    public Behaviour[] disableOnDeath;
-    [Tooltip("Если у игрока есть Rigidbody — можно добавить его сюда и убрать isKinematic = true на смерть, чтобы включить физическое падение")]
-    public Rigidbody playerRigidbody;
-    [Tooltip("Если true — проиграть звук смерти")]
-    public AudioClip deathClip;
-    [Tooltip("AudioSource для deathClip (если null, будет попытка найти на этом объекте)")]
-    public AudioSource audioSource;
-    public float deathRestartDelay = 2f;
+    [Header("Doll audio (play when doll turns)")]
+    public AudioClip dollTurnToPlayerClip;   // sound for GREEN
+    public AudioClip dollTurnAwayClip;       // sound for RED
+    public AudioSource dollAudioSource;      // will try to find on dollTransform if null
+    [Tooltip("Если true — звук куклы будет loop-иться в текущем состоянии")]
+    public bool dollLoopTurnSound = false;
 
-    [Header("Movement logging")]
-    public bool enableMovementLogging = true;
-    [Tooltip("период логирования в секундах")]
-    public float logInterval = 0.5f;
-    [Tooltip("Хранить логи в памяти (можно выгрузить позже)")]
-    public bool storeMovementLog = false;
-
-    [Header("Debug")]
+    [Header("Misc")]
     public bool debugLogs = true;
 
-    // internal
+    // internals
     Vector3[] posBuffer;
-    int posIndex = 0;
+    int posIndex;
     bool isGreen = true;
-    float phaseTimer = 0f;
+    float phaseTimer;
 
-    bool hasCrossedStart = false;
-    bool hasFinished = false;
-    public bool playerDead = false;
+    bool hasCrossedStart;
+    bool hasFinished;
+    bool playerDead;
 
     Vector3 startPos;
     Vector3 startNormal;
-    float lastStartSide = 0f;
+    float lastStartSide;
 
     Vector3 finishPos;
     Vector3 finishNormal;
-    float lastFinishSide = 0f;
+    float lastFinishSide;
 
     Quaternion dollForwardRot;
     Quaternion dollBackRot;
 
     Coroutine lightBlendCoroutine;
 
-    // controller smoothing buffer
+    // controller smoothing
     Vector3[] ctrlBuffer;
-    int ctrlIndex = 0;
-
-    // logging internals
-    float logTimer = 0f;
-    List<string> movementLog = new List<string>();
+    int ctrlIndex;
 
     void Awake()
     {
@@ -132,12 +104,12 @@ public class PositionBasedRLGController : MonoBehaviour
         posBuffer = new Vector3[Mathf.Max(1, smoothingFrames)];
         ctrlBuffer = new Vector3[Mathf.Max(1, smoothingFrames)];
     }
-    public bool IsPlayerDead() { return playerDead; }
+
     void Start()
     {
         if (playerRoot == null && Camera.main != null) playerRoot = Camera.main.transform;
 
-        Vector3 initial = (playerRoot != null) ? playerRoot.position : Vector3.zero;
+        Vector3 initial = playerRoot != null ? playerRoot.position : Vector3.zero;
         for (int i = 0; i < posBuffer.Length; i++) posBuffer[i] = initial;
 
         Vector3 ctrlInit = GetControllersAveragePosition();
@@ -146,18 +118,15 @@ public class PositionBasedRLGController : MonoBehaviour
         if (startLineTransform != null)
         {
             startPos = startLineTransform.position;
-            startNormal = (startLineTransform.forward.magnitude > 0.001f) ? startLineTransform.forward.normalized : Vector3.forward;
+            startNormal = startLineTransform.forward.sqrMagnitude > 0.0001f ? startLineTransform.forward.normalized : Vector3.forward;
             if (playerRoot != null) lastStartSide = Mathf.Sign(Vector3.Dot(playerRoot.position - startPos, startNormal));
-            if (debugLogs) Debug.Log($"[PBL] startPos={startPos}, startNormal={startNormal}, lastSide={lastStartSide}");
         }
 
         if (finishLineTransform != null)
         {
             finishPos = finishLineTransform.position;
-            finishNormal = (finishLineTransform.forward.magnitude > 0.001f) ? finishLineTransform.forward.normalized : Vector3.forward;
-            // initialize lastFinishSide analogous to start
+            finishNormal = finishLineTransform.forward.sqrMagnitude > 0.0001f ? finishLineTransform.forward.normalized : Vector3.forward;
             if (playerRoot != null) lastFinishSide = Mathf.Sign(Vector3.Dot(playerRoot.position - finishPos, finishNormal));
-            if (debugLogs) Debug.Log($"[PBL] finishPos={finishPos}, finishNormal={finishNormal}, lastFinishSide={lastFinishSide}");
         }
 
         if (dollTransform != null)
@@ -166,300 +135,117 @@ public class PositionBasedRLGController : MonoBehaviour
             dollBackRot = dollForwardRot * Quaternion.Euler(0f, dollBackYaw, 0f);
         }
 
-        // prepare audioSource default
-        if (audioSource == null && deathClip != null)
+        if (dollAudioSource == null && dollTransform != null)
         {
-            audioSource = GetComponent<AudioSource>();
-            if (audioSource == null)
+            dollAudioSource = dollTransform.GetComponent<AudioSource>();
+            if (dollAudioSource == null)
             {
-                audioSource = gameObject.AddComponent<AudioSource>();
-                audioSource.playOnAwake = false;
+                dollAudioSource = dollTransform.gameObject.AddComponent<AudioSource>();
+                dollAudioSource.playOnAwake = false;
+                dollAudioSource.spatialBlend = 1f;
             }
         }
 
+        // начальное состояние: свет зелёный и (если включено) loop-озвучка куклы
+        isGreen = true;
+        SetGreen(true, greenDuration);
+
         StartCoroutine(GameLoop());
-    }
-    void PlayGunshotAndDie()
-    {
-        if (playerDead) return;
-        playerDead = true;
-
-        if (debugLogs) Debug.Log("[PBL] Player detected on RED — playing distant gunshot!");
-
-        // Создаем временный источник звука в точке gunshotOrigin
-        if (gunshotClip != null && gunshotOrigin != null)
-        {
-            GameObject gunshotObj = new GameObject("GunshotAudio");
-            gunshotObj.transform.position = gunshotOrigin.position;
-            AudioSource shotSource = gunshotObj.AddComponent<AudioSource>();
-            shotSource.spatialBlend = 1f; // 3D-звук
-            shotSource.rolloffMode = AudioRolloffMode.Logarithmic;
-            shotSource.minDistance = gunshotMinDistance;
-            shotSource.maxDistance = gunshotMaxDistance;
-            shotSource.volume = gunshotVolume;
-            shotSource.PlayOneShot(gunshotClip);
-
-            Destroy(gunshotObj, gunshotClip.length + 1f);
-        }
-        else
-        {
-            Debug.LogWarning("[PBL] Gunshot clip or origin not assigned!");
-        }
-
-        // Отложенный вызов смерти
-        StartCoroutine(GunshotDeathDelay());
-    }
-
-    // Вспомогательная корутина
-    IEnumerator GunshotDeathDelay()
-    {
-        yield return new WaitForSeconds(gunshotToDeathDelay);
-        DoDeath();
     }
 
     void Update()
     {
-        Update_DebugInputs();
+        if (playerRoot == null || playerDead) return;
 
-        if (playerRoot == null) return;
-        if (playerDead) return;
-
-        // START detection (plane + rect fallback)
+        // START detection
         if (!hasCrossedStart && startLineTransform != null)
         {
             float currSide = Mathf.Sign(Vector3.Dot(playerRoot.position - startPos, startNormal));
-            if (lastStartSide <= 0f && currSide > 0f)
-            {
-                OnStartCrossed("plane");
-                hasCrossedStart = true;
-            }
+            if (lastStartSide <= 0f && currSide > 0f) { OnStartCrossed(); hasCrossedStart = true; }
             lastStartSide = currSide;
-
-            if (!hasCrossedStart && useRectFallback)
+            if (!hasCrossedStart && useRectFallback && IsInsideRect(playerRoot.position, startLineTransform, startRectHalfWidth, startRectDepth))
             {
-                if (IsInsideRect(playerRoot.position, startLineTransform, startRectHalfWidth, startRectDepth))
-                {
-                    OnStartCrossed("rectFallback");
-                    hasCrossedStart = true;
-                }
+                OnStartCrossed(); hasCrossedStart = true;
             }
         }
 
-        // FINISH detection — use sign-change logic (safer) + rect fallback
+        // FINISH detection
         if (!hasFinished && finishLineTransform != null)
         {
             float currF = Mathf.Sign(Vector3.Dot(playerRoot.position - finishPos, finishNormal));
-            if (lastFinishSide <= 0f && currF > 0f)
-            {
-                OnFinishCrossed("plane");
-                hasFinished = true;
-            }
+            if (lastFinishSide <= 0f && currF > 0f) { OnFinishCrossed(); hasFinished = true; }
             lastFinishSide = currF;
-
             if (!hasFinished && useRectFallback && IsInsideRect(playerRoot.position, finishLineTransform, finishRectHalfWidth, finishRectDepth))
             {
-                OnFinishCrossed("rectFallback");
-                hasFinished = true;
+                OnFinishCrossed(); hasFinished = true;
             }
         }
 
-        // Movement smoothing & detection (playerRoot)
+        // Movement smoothing (playerRoot)
         posBuffer[posIndex] = playerRoot.position;
         posIndex = (posIndex + 1) % posBuffer.Length;
-
         Vector3 avg = Vector3.zero;
         for (int i = 0; i < posBuffer.Length; i++) avg += posBuffer[i];
         avg /= posBuffer.Length;
-
         Vector3 last = posBuffer[(posIndex - 1 + posBuffer.Length) % posBuffer.Length];
         Vector3 a = ignoreVertical ? new Vector3(avg.x, 0f, avg.z) : avg;
         Vector3 l = ignoreVertical ? new Vector3(last.x, 0f, last.z) : last;
         float movedPlayer = Vector3.Distance(a, l);
 
-        // Controller smoothing & detection
-        Vector3 ctrlAvg = Vector3.zero;
+        // Controller smoothing & movement
         Vector3 currCtrl = GetControllersAveragePosition();
         ctrlBuffer[ctrlIndex] = currCtrl;
         ctrlIndex = (ctrlIndex + 1) % ctrlBuffer.Length;
+        Vector3 ctrlAvg = Vector3.zero;
         for (int i = 0; i < ctrlBuffer.Length; i++) ctrlAvg += ctrlBuffer[i];
         ctrlAvg /= ctrlBuffer.Length;
-
         Vector3 prevCtrl = ctrlBuffer[(ctrlIndex - 1 + ctrlBuffer.Length) % ctrlBuffer.Length];
-        Vector3 ctrlA = ignoreVertical ? new Vector3(ctrlAvg.x, 0f, ctrlAvg.z) : ctrlAvg;
-        Vector3 ctrlL = ignoreVertical ? new Vector3(prevCtrl.x, 0f, prevCtrl.z) : prevCtrl;
         Vector3 ctrlDelta = ctrlAvg - prevCtrl;
-        float ctrlDeltaMag = ctrlDelta.magnitude;
+        float ctrlDeltaMag = (ignoreVertical ? new Vector3(ctrlDelta.x, 0f, ctrlDelta.z).magnitude : ctrlDelta.magnitude);
 
-        // If using controller movement — map controller delta into player movement (in camera/gaze space)
         if (useControllerMovement && (rightController != null || leftController != null))
         {
             if (ctrlDeltaMag >= controllerMoveThreshold)
             {
-                // Map controller world delta into camera local space, then build movement in world aligned with camera forward/right/up
                 Transform cam = Camera.main != null ? Camera.main.transform : playerRoot;
-                Vector3 localDelta = cam.InverseTransformVector(ctrlDelta); // controller delta in camera local space
-                Vector3 moveWorld = Vector3.zero;
-                // forward/backwards (local Z) -> camera forward
-                moveWorld += cam.forward * localDelta.z;
-                // lateral (local X)
-                moveWorld += cam.right * localDelta.x;
-                // vertical: allow optional mapping to world up
-                if (controllerAffectsY)
-                    moveWorld += cam.up * localDelta.y;
-
-                // apply factor and translate playerRoot (preserve Y if you don't want vertical)
+                Vector3 localDelta = cam.InverseTransformVector(ctrlDelta);
+                Vector3 moveWorld = cam.forward * localDelta.z + cam.right * localDelta.x;
+                if (controllerAffectsY) moveWorld += cam.up * localDelta.y;
                 Vector3 apply = moveWorld * controllerMoveFactor;
-                // If you want to keep player on ground, zero Y unless controllerAffectsY
                 if (!controllerAffectsY) apply.y = 0f;
-
                 playerRoot.position += apply;
-                // also update posBuffer immediate to avoid false big "movedPlayer" detection next frame
                 posBuffer[posIndex] = playerRoot.position;
             }
         }
 
-        // Combined moved to consider for RED detection: take the max of player-root motion and controller delta magnitude (projected if ignoreVertical)
-        float movedForDetection = movedPlayer;
-        if (ctrlDeltaMag > movedForDetection) movedForDetection = ctrlDeltaMag;
+        float movedForDetection = Mathf.Max(movedPlayer, ctrlDeltaMag);
 
-        // logging movement (periodic)
-        if (enableMovementLogging)
-        {
-            logTimer -= Time.deltaTime;
-            if (logTimer <= 0f)
-            {
-                string s = $"[MoveLog] t={Time.time:F2} movedPlayer={movedPlayer:F4} ctrlDelta={ctrlDeltaMag:F4} isGreen={isGreen} crossedStart={hasCrossedStart} finished={hasFinished}";
-                if (debugLogs) Debug.Log(s);
-                if (storeMovementLog) movementLog.Add(s);
-                logTimer = Mathf.Max(0.01f, logInterval);
-            }
-        }
-
-        // Only kill when RED & started & not finished
+        // Kill condition: RED & started & not finished
         if (!isGreen && hasCrossedStart && !hasFinished)
         {
             if (movedForDetection > moveThreshold)
             {
-                if (debugLogs) Debug.Log($"[PBL] Movement detected on RED. movedForDetection={movedForDetection:F3}, threshold={moveThreshold}");
+                if (debugLogs) Debug.Log($"[PBL] Movement detected on RED -> gunshot");
                 PlayGunshotAndDie();
             }
         }
 
-        // UI debug text
-        if (debugText != null)
-        {
-            debugText.text = $"green={isGreen}\ncrossedStart={hasCrossedStart}\nfinished={hasFinished}\nplayerMoved={movedPlayer:F3}\nctrlDelta={ctrlDeltaMag:F3}";
-        }
-
-        // Doll smoothing rotation
+        // Doll rotation smoothing (use dollTurnDuration)
         if (dollTransform != null)
         {
             Quaternion target = isGreen ? dollForwardRot : dollBackRot;
-            dollTransform.rotation = Quaternion.Slerp(dollTransform.rotation, target, Time.deltaTime * dollTurnSpeed);
+            float frac = Mathf.Clamp01(Time.deltaTime / Mathf.Max(0.0001f, dollTurnDuration));
+            dollTransform.rotation = Quaternion.Slerp(dollTransform.rotation, target, frac);
         }
     }
-
-    // ---- DEBUG BLOCK START ----
-    [Header("DEBUG Helpers")]
-    public bool debugVerbose = true;
-    public KeyCode debugForceStartKey = KeyCode.F1;   // вручную отметить старт
-    public KeyCode debugForceFinishKey = KeyCode.F2;  // вручную отметить финиш
-    public KeyCode debugPrintStateKey = KeyCode.F3;   // печать позиции/дота
-
-    // Печать текущих значений для диагностики
-    void DebugPrintState()
-    {
-        if (playerRoot == null)
-        {
-            Debug.LogWarning("[DBG] playerRoot == null");
-            return;
-        }
-        string s = $"[DBG] playerPos={playerRoot.position.ToString("F3")}";
-        if (startLineTransform != null)
-        {
-            s += $", startPos={startPos.ToString("F3")}, startForward={startNormal.ToString("F3")}";
-            float dot = Vector3.Dot(playerRoot.position - startPos, startNormal);
-            s += $", dot={dot:F4}, lastStartSide={lastStartSide}";
-        }
-        if (finishLineTransform != null)
-        {
-            float dotF = Vector3.Dot(playerRoot.position - finishPos, finishNormal);
-            s += $", finishPos={finishPos.ToString("F3")}, finishDot={dotF:F4}, lastFinishSide={lastFinishSide}";
-        }
-        s += $", hasCrossedStart={hasCrossedStart}, hasFinished={hasFinished}, isGreen={isGreen}";
-        Debug.Log(s);
-    }
-
-    // Метод для ручного вызова проверки (можно вызвать из инспектора)
-    [ContextMenu("Run Manual Start/Finish Check")]
-    public void ManualCheckStartFinish()
-    {
-        if (startLineTransform != null)
-        {
-            float currSide = Mathf.Sign(Vector3.Dot(playerRoot.position - startPos, startNormal));
-            Debug.Log($"[DBG] Manual start check currSide={currSide}, lastStartSide={lastStartSide}");
-            if (lastStartSide <= 0f && currSide > 0f)
-            {
-                OnStartCrossed("manual_check_plane");
-                hasCrossedStart = true;
-            }
-            else if (useRectFallback && IsInsideRect(playerRoot.position, startLineTransform, startRectHalfWidth, startRectDepth))
-            {
-                OnStartCrossed("manual_check_rect");
-                hasCrossedStart = true;
-            }
-        }
-        if (finishLineTransform != null)
-        {
-            float currF = Mathf.Sign(Vector3.Dot(playerRoot.position - finishPos, finishNormal));
-            Debug.Log($"[DBG] Manual finish check currF={currF}, lastFinishSide={lastFinishSide}");
-            if (lastFinishSide <= 0f && currF > 0f)
-            {
-                OnFinishCrossed("manual_check_plane");
-                hasFinished = true;
-            }
-            else if (useRectFallback && IsInsideRect(playerRoot.position, finishLineTransform, finishRectHalfWidth, finishRectDepth))
-            {
-                OnFinishCrossed("manual_check_rect");
-                hasFinished = true;
-            }
-        }
-    }
-
-    void Update_DebugInputs()
-    {
-        if (!debugVerbose) return;
-
-        if (Input.GetKeyDown(debugForceStartKey))
-        {
-            Debug.Log("[DBG] ForceStart pressed");
-            hasCrossedStart = true;
-            OnStartCrossed("forced_key");
-        }
-        if (Input.GetKeyDown(debugForceFinishKey))
-        {
-            Debug.Log("[DBG] ForceFinish pressed");
-            hasFinished = true;
-            OnFinishCrossed("forced_key");
-        }
-        if (Input.GetKeyDown(debugPrintStateKey))
-        {
-            DebugPrintState();
-        }
-    }
-    // ---- DEBUG BLOCK END ----
 
     IEnumerator GameLoop()
     {
         yield return new WaitForSeconds(startDelay);
-
         while (!playerDead && !hasFinished)
         {
-            // GREEN
             SetGreen(true, greenDuration);
             yield return new WaitForSeconds(greenDuration);
-
-            // RED
             SetGreen(false, redDuration);
             yield return new WaitForSeconds(redDuration);
         }
@@ -467,14 +253,12 @@ public class PositionBasedRLGController : MonoBehaviour
 
     public void SetGreen(bool green, float timer)
     {
+        if (isGreen == green) { phaseTimer = timer; return; }
+        bool previous = isGreen;
         isGreen = green;
         phaseTimer = timer;
-        if (statusText != null)
-        {
-            statusText.text = isGreen ? "GREEN — Move!" : "RED — Stop!";
-            statusText.color = isGreen ? Color.green : Color.red;
-        }
 
+        // light blending
         if (directionalLight != null)
         {
             if (lightBlendCoroutine != null) StopCoroutine(lightBlendCoroutine);
@@ -483,7 +267,36 @@ public class PositionBasedRLGController : MonoBehaviour
             lightBlendCoroutine = StartCoroutine(BlendLight(targetColor, targetIntensity, lightBlendDuration));
         }
 
-        if (debugLogs) Debug.Log($"[PBL] SetGreen({green})");
+        // doll audio: loop or one-shot
+        if (dollAudioSource != null)
+        {
+            if (dollLoopTurnSound)
+            {
+                AudioClip clip = isGreen ? dollTurnToPlayerClip : dollTurnAwayClip;
+                if (clip != null)
+                {
+                    if (dollAudioSource.clip != clip || !dollAudioSource.isPlaying)
+                    {
+                        dollAudioSource.clip = clip;
+                        dollAudioSource.loop = true;
+                        dollAudioSource.Play();
+                    }
+                }
+                else
+                {
+                    dollAudioSource.Stop();
+                    dollAudioSource.clip = null;
+                    dollAudioSource.loop = false;
+                }
+            }
+            else
+            {
+                if (isGreen && dollTurnToPlayerClip != null) dollAudioSource.PlayOneShot(dollTurnToPlayerClip);
+                else if (!isGreen && dollTurnAwayClip != null) dollAudioSource.PlayOneShot(dollTurnAwayClip);
+            }
+        }
+
+        if (debugLogs) Debug.Log($"[PBL] SetGreen({isGreen}) (prev={previous})");
     }
 
     IEnumerator BlendLight(Color targetColor, float targetIntensity, float duration)
@@ -505,76 +318,100 @@ public class PositionBasedRLGController : MonoBehaviour
         lightBlendCoroutine = null;
     }
 
-    // Death action: disables specified components, optionally toggles rigidbody, plays sound, shows UI and restarts scene
-    void DoDeath()
+    void PlayGunshotAndDie()
     {
-        if (debugLogs) Debug.Log("[PBL] Player dead.");
+        if (playerDead) return;
+        playerDead = true;
 
-        // Отключаем управление
-        if (disableOnDeath != null)
+        // play gunshot in world
+        if (gunshotClip != null && gunshotOrigin != null)
         {
-            foreach (var b in disableOnDeath)
-            {
-                if (b != null) b.enabled = false;
-            }
+            GameObject gunshotObj = new GameObject("GunshotAudio");
+            gunshotObj.transform.position = gunshotOrigin.position;
+            AudioSource shotSource = gunshotObj.AddComponent<AudioSource>();
+            shotSource.spatialBlend = 1f;
+            shotSource.rolloffMode = AudioRolloffMode.Logarithmic;
+            shotSource.minDistance = gunshotMinDistance;
+            shotSource.maxDistance = gunshotMaxDistance;
+            shotSource.volume = gunshotVolume;
+            shotSource.PlayOneShot(gunshotClip);
+            Destroy(gunshotObj, gunshotClip.length + 1f);
+        }
+        else if (debugLogs) Debug.LogWarning("[PBL] Gunshot clip or origin not assigned!");
+
+        // stop doll loop sound immediately (if any)
+        if (dollAudioSource != null && dollAudioSource.loop)
+        {
+            dollAudioSource.Stop();
+            dollAudioSource.clip = null;
+            dollAudioSource.loop = false;
         }
 
-        // Падение игрока
-        if (playerRigidbody != null)
-        {
-            playerRigidbody.isKinematic = false;
-            playerRigidbody.AddForce(Vector3.down * 2f, ForceMode.Impulse);
-        }
-
-        // Звук смерти
-        if (deathClip != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(deathClip);
-        }
-
-        if (statusText != null)
-            statusText.text = "Detected! You Lose";
-
+        // after short delay, restart the scene
         StartCoroutine(RestartAfterDelay(deathRestartDelay));
     }
 
     IEnumerator RestartAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        // optional: dump movement log to console
-        if (storeMovementLog && movementLog != null && movementLog.Count > 0)
-        {
-            Debug.Log($"[PBL] Movement log entries: {movementLog.Count}");
-            for (int i = 0; i < movementLog.Count; i++)
-            {
-                Debug.Log(movementLog[i]);
-            }
-        }
+        if (debugLogs) Debug.Log("[PBL] Restarting scene due to death...");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void OnStartCrossed(string reason)
+    void OnStartCrossed()
     {
-        if (debugLogs) Debug.Log($"[PBL] Start crossed ({reason})");
-        if (statusText != null) statusText.text = "Started!";
+        if (debugLogs) Debug.Log("[PBL] Start crossed");
         hasCrossedStart = true;
     }
 
-    public void OnFinishCrossed(string reason)
+    public void OnFinishCrossed()
     {
-        if (debugLogs) Debug.Log($"[PBL] Finish crossed ({reason})");
-        if (statusText != null) statusText.text = "Finished!";
+        if (debugLogs) Debug.Log("[PBL] Finish crossed");
         hasFinished = true;
 
-        var gt = FindObjectOfType<GameTimer>();
-        if (gt != null)
-        {
-            gt.OnFinishReached();
-        }
-
+        // start coroutine that safely loads the next scene
+        StartCoroutine(LoadNextLevelCoroutine());
     }
 
-    // helper: return averaged controller world position (right+left if present)
+    IEnumerator LoadNextLevelCoroutine()
+    {
+        // optional short wait (allows hit-sounds/animations to play)
+        yield return new WaitForSeconds(finishLoadDelay);
+
+        // stop doll loop if any
+        if (dollAudioSource != null && dollAudioSource.loop)
+        {
+            dollAudioSource.Stop();
+            dollAudioSource.clip = null;
+            dollAudioSource.loop = false;
+        }
+
+        // try to gracefully deactivate XR manager and ray interactors to avoid NRE in package code
+        var xrMgr = FindObjectOfType<XRInteractionManager>();
+        if (xrMgr != null) xrMgr.gameObject.SetActive(false);
+
+        var rayInteractors = FindObjectsOfType<XRRayInteractor>();
+        foreach (var r in rayInteractors)
+        {
+            if (r != null && r.gameObject.activeSelf) r.gameObject.SetActive(false);
+        }
+
+        // give Unity a frame to complete deactivation
+        yield return null;
+
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextIndex = currentIndex + 1;
+        if (nextIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            if (debugLogs) Debug.Log($"[PBL] Loading next scene (index {nextIndex})");
+            SceneManager.LoadScene(nextIndex);
+        }
+        else
+        {
+            Debug.Log("[PBL] Это был последний уровень — следующая сцена отсутствует в Build Settings.");
+        }
+    }
+
     Vector3 GetControllersAveragePosition()
     {
         Vector3 sum = Vector3.zero;
@@ -593,15 +430,11 @@ public class PositionBasedRLGController : MonoBehaviour
         return insideX && insideZ;
     }
 
-    // public helper: force death from other scripts / buttons
+    // helpers
     public void ForceDeath()
     {
-        DoDeath();
+        PlayGunshotAndDie();
     }
 
-    // public helper: reset movement log
-    public void ClearMovementLog()
-    {
-        if (movementLog != null) movementLog.Clear();
-    }
+    public bool IsPlayerDead() => playerDead;
 }
