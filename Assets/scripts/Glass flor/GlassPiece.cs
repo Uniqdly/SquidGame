@@ -71,6 +71,23 @@ public class GlassPiece : MonoBehaviour
     {
         if (broken) return;
 
+        // === ТЕСТЕР (камень / шарик) ===
+        if (collision.collider.CompareTag("GlassTester"))
+        {
+            Debug.Log($"{name} hit by GlassTester");
+
+            // Финиш не ломаем
+            if (isFinish) return;
+
+            if (isBreakable)
+            {
+                Break();
+            }
+
+            return; // важно: не идём дальше
+        }
+
+        // === ИГРОК ===
         if (collision.collider.CompareTag("Player"))
         {
             if (!touchedByPlayer)
@@ -79,7 +96,6 @@ public class GlassPiece : MonoBehaviour
                 touchedByPlayer = true;
             }
 
-            // Если это финиш — НЕ ломаем и не проваливаем
             if (isFinish)
             {
                 Debug.Log($"{name} is FINISH — player landed, no break.");
@@ -96,6 +112,7 @@ public class GlassPiece : MonoBehaviour
             }
         }
     }
+
 
     // публичная обёртка для программного вызова ломки
     public void Break()

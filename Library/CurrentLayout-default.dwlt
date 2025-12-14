@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2048
     height: 1060.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 2048
     height: 1010.80005
-  m_MinSize: {x: 577, y: 471}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 579, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 115
+  controlID: 124
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 552.80005
     height: 1010.80005
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 401.6
     height: 713.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -224,10 +224,10 @@ MonoBehaviour:
     y: 0
     width: 1495.2
     height: 1010.80005
-  m_MinSize: {x: 302, y: 471}
+  m_MinSize: {x: 303, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 54
+  controlID: 49
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,10 +249,10 @@ MonoBehaviour:
     y: 0
     width: 1495.2
     height: 713.6
-  m_MinSize: {x: 302, y: 200}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 303, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 55
+  controlID: 50
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,9 +318,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.7132574, y: 20.137905, z: -5.422353}
+    m_Target: {x: 1.6013715, y: 13.015156, z: -3.8761768}
     speed: 2
-    m_Value: {x: -1.7132574, y: 20.137905, z: -5.422353}
+    m_Value: {x: 1.6013715, y: 13.015156, z: -3.8761768}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -367,9 +367,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.006996047, y: -0.99506044, z: 0.09363347, w: 0.017945528}
+    m_Target: {x: -0.22371449, y: -0.09735175, z: 0.027798489, w: -0.9690051}
     speed: 2
-    m_Value: {x: 0.0069985553, y: -0.9954171, z: 0.09366704, w: 0.017951962}
+    m_Value: {x: -0.22379628, y: -0.09738734, z: 0.027808653, w: -0.9693594}
   m_Size:
     m_Target: 10
     speed: 2
@@ -487,22 +487,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 57
   m_LastProjectPath: "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 67.79993}
-    m_SelectedIDs: 8eda0000
-    m_LastClickedID: 55950
-    m_ExpandedIDs: 00000000865c000090da000000ca9a3b
+    m_SelectedIDs: e24e0000
+    m_LastClickedID: 20194
+    m_ExpandedIDs: 00000000e24e0000fa4e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -530,7 +530,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000865c0000
+    m_ExpandedIDs: 00000000e24e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -618,7 +618,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 1289.6
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
@@ -651,9 +651,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: aeda0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6cacffff66fbffff364a0000184b0000644b0000
+      m_SelectedIDs: 7c480000
+      m_LastClickedID: 18556
+      m_ExpandedIDs: 64fbffff66fbffffbc48000018490000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
