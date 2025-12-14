@@ -12,6 +12,11 @@ public class CutChecker : MonoBehaviour
     public LayerMask stampLayer;
     public float rayLength = 0.12f;
 
+    [Header("Success / Win")]
+    public float winDelay = 1.2f;
+    public AudioClip winSound;
+    public ParticleSystem winParticles;
+
     [Header("Tolerance / timing")]
     public float tolerance = 0.02f;          // допустимая дистанция до точки
     public float maxNoContactTime = 0.6f;    // если игла не касается штампа дольше этого - consider miss
@@ -447,6 +452,39 @@ public class CutChecker : MonoBehaviour
     void Success()
     {
         Debug.Log("CutChecker: SUCCESS! Figure cut.");
+
         active = false;
+        failed = true; // чтобы ничего больше не считалось
+
+        // Отключаем XR взаимодействие
+        var interactors = FindObjectsOfType<UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor>();
+        foreach (var it in interactors)
+            it.enabled = false;
+
+        // Эффекты победы
+        if (winParticles != null && candyRoot != null)
+            Instantiate(winParticles, candyRoot.position, Quaternion.identity);
+
+        if (winSound != null && Camera.main != null)
+            AudioSource.PlayClipAtPoint(winSound, Camera.main.transform.position);
+
+        // Загружаем следующий уровень
+        Invoke(nameof(LoadNextLevel), winDelay);
     }
+    void LoadNextLevel()
+    {
+        int current = SceneManager.GetActiveScene().buildIndex;
+        int next = current + 1;
+
+        if (next < SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.Log($"CutChecker: Loading next level ({next})");
+            SceneManager.LoadScene(next);
+        }
+        else
+        {
+            Debug.Log("CutChecker: Last level completed!");
+        }
+    }
+
 }

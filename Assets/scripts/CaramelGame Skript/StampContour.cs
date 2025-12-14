@@ -1,6 +1,7 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [ExecuteAlways]
 public class StampContour : MonoBehaviour
@@ -9,23 +10,31 @@ public class StampContour : MonoBehaviour
     public bool drawGizmos = true;
     public bool closed = true;
 
-    // Цвета точек
+    [Header("Colors")]
     public Color defaultColor = Color.yellow;
     public Color touchedColor = Color.green;
 
-    // Для проверки, какие точки уже окрашены
+
+    [Header("Win settings")]
+    public float winDelay = 1.2f;
+    public AudioClip winSound;
+    public ParticleSystem winParticles;
+
+    // internal
     private HashSet<Transform> touchedPoints = new HashSet<Transform>();
+    private bool winTriggered = false;
 
     public int Count => contourPoints != null ? contourPoints.Count : 0;
 
     private void Start()
     {
-        // Убедимся, что каждая точка имеет необходимые компоненты
+        winTriggered = false;
+        touchedPoints.Clear();
+
         foreach (var point in contourPoints)
         {
             if (point == null) continue;
 
-            // Добавляем визуализацию (если её нет)
             var rend = point.GetComponent<Renderer>();
             if (rend == null)
             {
@@ -38,10 +47,9 @@ public class StampContour : MonoBehaviour
                 rend.material = new Material(Shader.Find("Standard"));
                 rend.material.color = defaultColor;
 
-                DestroyImmediate(sphere.GetComponent<Collider>()); // убираем лишний коллайдер
+                DestroyImmediate(sphere.GetComponent<Collider>());
             }
 
-            // Добавляем триггер для столкновений с иглой
             var collider = point.GetComponent<SphereCollider>();
             if (collider == null)
             {
@@ -50,7 +58,6 @@ public class StampContour : MonoBehaviour
                 collider.radius = 0.005f;
             }
 
-            // Добавляем обработчик коллизий
             if (point.GetComponent<ContourCollision>() == null)
             {
                 var handler = point.gameObject.AddComponent<ContourCollision>();
@@ -61,67 +68,91 @@ public class StampContour : MonoBehaviour
 
     public void OnPointTouched(Transform point)
     {
-        if (point == null || touchedPoints.Contains(point)) return;
+        if (point == null || winTriggered) return;
+        if (touchedPoints.Contains(point)) return;
 
-        // Попробуем найти ContourPoint на самом объекте точки (или в родителе)
         var cp = point.GetComponent<ContourPoint>() ?? point.GetComponentInChildren<ContourPoint>();
-        if (cp == null)
-        {
-            // Если нет ContourPoint — fallback к старой логике (как раньше)
-            var rendFallback = point.GetComponentInChildren<Renderer>();
-            if (rendFallback != null) rendFallback.material.color = touchedColor;
-            touchedPoints.Add(point);
-            Debug.Log($"[StampContour] Point '{point.name}' touched (no ContourPoint component). ({touchedPoints.Count}/{Count})");
-            return;
-        }
 
-        if (cp.pointType == ContourPoint.PointType.Main)
+        if (cp != null && cp.pointType != ContourPoint.PointType.Main)
         {
-            // Успешное попадание по основному контуру
-            cp.MarkTouchedAsMain();
-
-            var rend = point.GetComponentInChildren<Renderer>();
-            if (rend != null) rend.material.color = touchedColor;
-
-            touchedPoints.Add(point);
-            Debug.Log($"[StampContour] Main point '{point.name}' touched. ({touchedPoints.Count}/{Count})");
-        }
-        else
-        {
-            // Это внутренняя или внешняя точка — промах
             cp.MarkAsMissed();
-            Debug.LogWarning($"[StampContour] Forbidden point '{point.name}' touched (type={cp.pointType}). Registering miss.");
+            Debug.LogWarning($"[StampContour] Forbidden point '{point.name}' touched.");
 
-            // Пытаемся уведомить CutChecker на том же объекте или в родителях
             var checker = GetComponentInParent<CutChecker>();
             if (checker != null)
             {
-                // используем явный метод уведомления для промаха (RegisterMiss с force = true)
-                var mi = checker.GetType().GetMethod("RegisterMiss", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
-                if (mi != null)
-                {
-                    // вызов RegisterMiss(reason, true) — если метод есть
-                    try
-                    {
-                        mi.Invoke(checker, new object[] { $"Touched forbidden contour point {point.name}", true });
-                    }
-                    catch
-                    {
-                        // fallback — если не получилось с force, вызываем публичный NotifyCookieContact
-                        var notify = checker.GetType().GetMethod("NotifyCookieContact", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                        if (notify != null) notify.Invoke(checker, null);
-                    }
-                }
-                else
-                {
-                    // fallback: вызов публичного NotifyCookieContact
-                    var notify = checker.GetType().GetMethod("NotifyCookieContact", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                    if (notify != null) notify.Invoke(checker, null);
-                }
+                var notify = checker.GetType().GetMethod(
+                    "NotifyCookieContact",
+                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
+                );
+                if (notify != null) notify.Invoke(checker, null);
             }
+            return;
         }
+
+        // SUCCESSFUL POINT
+        if (cp != null)
+            cp.MarkTouchedAsMain();
+
+        var rend = point.GetComponentInChildren<Renderer>();
+        if (rend != null)
+            rend.material.color = touchedColor;
+
+        touchedPoints.Add(point);
+
+        Debug.Log($"[StampContour] Point touched {touchedPoints.Count}/{Count}");
+
+        CheckWinCondition();
     }
 
+    void CheckWinCondition()
+    {
+        if (winTriggered) return;
+        if (touchedPoints.Count < Count) return;
+
+        TriggerWin();
+    }
+
+    void TriggerWin()
+    {
+        winTriggered = true;
+        Debug.Log("[StampContour] WIN! All contour points cut.");
+
+        // disable CutChecker if exists
+        var checker = GetComponentInParent<CutChecker>();
+        if (checker != null)
+            checker.enabled = false;
+
+        // disable XR interactors
+        var interactors = FindObjectsOfType<UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor>();
+        foreach (var it in interactors)
+            it.enabled = false;
+
+        // effects
+        if (winParticles != null)
+            Instantiate(winParticles, transform.position, Quaternion.identity);
+
+        if (winSound != null && Camera.main != null)
+            AudioSource.PlayClipAtPoint(winSound, Camera.main.transform.position);
+
+        Invoke(nameof(LoadNextLevel), winDelay);
+    }
+
+    void LoadNextLevel()
+    {
+        int current = SceneManager.GetActiveScene().buildIndex;
+        int next = current + 1;
+
+        if (next < SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.Log($"[StampContour] Loading next level ({next})");
+            SceneManager.LoadScene(next);
+        }
+        else
+        {
+            Debug.Log("[StampContour] Last level completed!");
+        }
+    }
 
     public Vector3 GetLocalPoint(int index)
     {
@@ -134,11 +165,18 @@ public class StampContour : MonoBehaviour
     {
         dist = float.MaxValue;
         int best = -1;
-        if (contourPoints == null || contourPoints.Count == 0) return -1;
+
+        if (contourPoints == null || contourPoints.Count == 0)
+            return -1;
+
         for (int i = 0; i < contourPoints.Count; i++)
         {
             float d = Vector3.Distance(localPos, contourPoints[i].localPosition);
-            if (d < dist) { dist = d; best = i; }
+            if (d < dist)
+            {
+                dist = d;
+                best = i;
+            }
         }
         return best;
     }
@@ -146,13 +184,15 @@ public class StampContour : MonoBehaviour
     void OnDrawGizmos()
     {
         if (!drawGizmos || contourPoints == null || contourPoints.Count == 0) return;
+
         Gizmos.color = Color.yellow;
         for (int i = 0; i < contourPoints.Count; i++)
         {
             var a = transform.TransformPoint(contourPoints[i].localPosition);
             var b = transform.TransformPoint(contourPoints[(i + 1) % contourPoints.Count].localPosition);
             Gizmos.DrawSphere(a, 0.003f);
-            if (i < contourPoints.Count - 1 || closed) Gizmos.DrawLine(a, b);
+            if (i < contourPoints.Count - 1 || closed)
+                Gizmos.DrawLine(a, b);
         }
     }
 }

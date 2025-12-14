@@ -1892,7 +1892,7 @@ MonoBehaviour:
   leftHand: {fileID: 779287537}
   rightHand: {fileID: 960998805}
   impulseMultiplier: 1.5
-  maxSpeed: 3
+  maxSpeed: 5
   damping: 5
   useCharacterController: 1
   swingVelocityThreshold: 0.4

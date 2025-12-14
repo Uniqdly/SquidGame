@@ -146,7 +146,7 @@ public class PositionBasedRLGController : MonoBehaviour
             }
         }
 
-        // начальное состояние: свет зелёный и (если включено) loop-озвучка куклы
+        
         isGreen = true;
         SetGreen(true, greenDuration);
 
