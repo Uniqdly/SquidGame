@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using System.Reflection;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class CutChecker : MonoBehaviour
 {
     [Header("Needle / stamp")]
-    public Transform needleTip;              // назначь в Inspector
+    public Transform needleTip;              // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Inspector
     public LayerMask stampLayer;
     public float rayLength = 0.12f;
 
@@ -18,17 +18,17 @@ public class CutChecker : MonoBehaviour
     public ParticleSystem winParticles;
 
     [Header("Tolerance / timing")]
-    public float tolerance = 0.02f;          // допустимая дистанция до точки
-    public float maxNoContactTime = 0.6f;    // если игла не касается штампа дольше этого - consider miss
+    public float tolerance = 0.02f;          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    public float maxNoContactTime = 0.6f;    // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - consider miss
     public float minTimeBetweenSamples = 0.02f;
 
     [Header("Miss settings")]
-    public int maxAllowedMisses = 3;         // на 3ем — исчезание и смерть
-    public float missCooldown = 0.6f;        // минимальное время между засчитанными промахами
+    public int maxAllowedMisses = 3;         // пїЅпїЅ 3пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    public float missCooldown = 0.6f;        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public bool resetMissesOnSuccessfulHit = false;
 
     [Header("Visual feedback (darken)")]
-    public Renderer candyRenderer;           // основной renderer карамели (назначить)
+    public Renderer candyRenderer;           // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ renderer пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
     [Range(0f, 1f)] public float darkOnFirstMiss = 0.25f;
     [Range(0f, 1f)] public float darkOnSecondMiss = 0.55f;
     [Range(0f, 1f)] public float darkOnThirdMiss = 0.95f;
@@ -43,7 +43,7 @@ public class CutChecker : MonoBehaviour
     public float playerKillDelay = 0.6f;
 
     [Header("Restart")]
-    [Tooltip("Дополнительная задержка перед перезапуском сцены после death-handling")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ death-handling")]
     public float restartDelay = 1.5f;
 
     // internal
@@ -248,12 +248,12 @@ public class CutChecker : MonoBehaviour
         }
     }
 
-    // возвращает true если обработал хит (и дальнейшая обработка не требуется)
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ true пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ (пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
     bool TryHandleDirectContourCollider(Collider hitCollider)
     {
         if (hitCollider == null) return false;
 
-        // Попробуем найти ContourPoint компонент в родителях
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ ContourPoint пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         var contourPointComp = hitCollider.GetComponentInParent<ContourPoint>();
         if (contourPointComp != null)
         {
@@ -264,15 +264,15 @@ public class CutChecker : MonoBehaviour
                 int idx = sc.contourPoints.IndexOf(pt);
                 if (idx >= 0 && !visited[idx])
                 {
-                    // если это запрещённый тип — промах (force)
+                    // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (force)
                     if (contourPointComp.pointType != ContourPoint.PointType.Main)
                     {
                         contourPointComp.MarkAsMissed();
                         RegisterMiss($"Direct hit forbidden pointType={contourPointComp.pointType}", true);
-                        return true; // обработали — это промах
+                        return true; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                     }
 
-                    // основной контур — успешный хит
+                    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
                     visited[idx] = true;
                     sc.OnPointTouched(pt);
                     contourPointComp.MarkTouchedAsMain();
@@ -282,17 +282,17 @@ public class CutChecker : MonoBehaviour
                         ApplyDarknessTarget(0f);
                     }
                     CheckCompletion();
-                    return true; // обработали — успех
+                    return true; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
                 }
                 else if (idx >= 0 && visited[idx])
                 {
-                    // уже посещённая точка — считаем обработанной, не нужно дальше
+                    // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                     return true;
                 }
             }
         }
 
-        // else: не принадлежит нашему списку контурных точек — не обработали
+        // else: пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         return false;
     }
 
@@ -371,7 +371,7 @@ public class CutChecker : MonoBehaviour
 
     void TriggerFinalFail()
     {
-        Debug.LogError("CutChecker: FINAL FAIL (max misses) — breaking candy and killing player.");
+        Debug.LogError("CutChecker: FINAL FAIL (max misses) пїЅ breaking candy and killing player.");
         failed = true;
         active = false;
 
@@ -454,21 +454,21 @@ public class CutChecker : MonoBehaviour
         Debug.Log("CutChecker: SUCCESS! Figure cut.");
 
         active = false;
-        failed = true; // чтобы ничего больше не считалось
+        failed = true; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-        // Отключаем XR взаимодействие
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ XR пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         var interactors = FindObjectsOfType<UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor>();
         foreach (var it in interactors)
             it.enabled = false;
 
-        // Эффекты победы
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (winParticles != null && candyRoot != null)
             Instantiate(winParticles, candyRoot.position, Quaternion.identity);
 
         if (winSound != null && Camera.main != null)
             AudioSource.PlayClipAtPoint(winSound, Camera.main.transform.position);
 
-        // Загружаем следующий уровень
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Invoke(nameof(LoadNextLevel), winDelay);
     }
     void LoadNextLevel()

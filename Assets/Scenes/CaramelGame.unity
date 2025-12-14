@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2029759167}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d86e7a21948d0a64399642067cc6075d, type: 3}
   m_Name: 
@@ -2413,6 +2413,31 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 922c4b741f0d47d4b933b81d9adf6547, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!1 &374592923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1651106138942616026, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &374592928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374592923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86e7a21948d0a64399642067cc6075d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contourPoints: []
+  drawGizmos: 1
+  closed: 1
+  defaultColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  touchedColor: {r: 0, g: 1, b: 0, a: 1}
+  winDelay: 1.2
+  winSound: {fileID: 0}
+  winParticles: {fileID: 0}
 --- !u!1 &377715108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -12724,7 +12749,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498052687, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4517978453119329747, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
       propertyPath: m_Name

@@ -3,7 +3,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CandyPickLimiter : MonoBehaviour
 {
-    private static bool candyAlreadyPicked = false;
+    // та сама€ "выбранна€" карамель
+    private static CandyPickLimiter selectedCandy = null;
 
     private XRGrabInteractable grab;
 
@@ -26,18 +27,22 @@ public class CandyPickLimiter : MonoBehaviour
 
     void OnPicked(SelectEnterEventArgs args)
     {
-        // если уже вз€ли другую карамель Ч удал€ем эту
-        if (candyAlreadyPicked)
+        // если ещЄ Ќ» ј јя карамель не выбрана
+        if (selectedCandy == null)
         {
-            Destroy(gameObject);
+            selectedCandy = this;
+            DestroyOtherCandies();
             return;
         }
 
-        // перва€ выбранна€ карамель
-        candyAlreadyPicked = true;
+        // если берут “” ∆≈ —јћ”ё карамель Ч ничего не делаем
+        if (selectedCandy == this)
+        {
+            return;
+        }
 
-        // уничтожаем все остальные карамели
-        DestroyOtherCandies();
+        // если берут другую карамель Ч уничтожаем еЄ
+        Destroy(gameObject);
     }
 
     void DestroyOtherCandies()
