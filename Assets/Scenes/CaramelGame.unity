@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &11254747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &106726646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +473,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 1156272056}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &117947091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1156272056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &117947092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &117947093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +524,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 589146879}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &135591115 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 589146879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &135591116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &135591117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &154425818
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -795,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &175048313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &178304364
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -951,6 +961,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &178304365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 178304360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &179420002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1150,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &191582229
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1201,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &192391163
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1328,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &221918562
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1342,6 +1357,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &221918563 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 221918558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &236810853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182065287459, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &243137815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &248093585
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1650,9 +1675,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 922c4b741f0d47d4b933b81d9adf6547, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!4 &265836417 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182556845335, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &298701270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 705635637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &298701271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 705635637}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &298701272
@@ -1667,7 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &298701273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,7 +1768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &303354666
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1769,7 +1804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &304297929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,7 +1870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &310092411
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1952,7 +1987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &326137733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2062,17 +2097,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ac9ce668031894543b1a8807a91a8e2f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
---- !u!114 &345667223 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 498052687, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
-  m_PrefabInstance: {fileID: 2029759167}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86e7a21948d0a64399642067cc6075d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &348311223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2267,7 +2291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &352939041
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2281,6 +2305,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &352939042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 352939037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &363834525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -2303,7 +2332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &363834528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2430,7 +2459,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86e7a21948d0a64399642067cc6075d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contourPoints: []
+  contourPoints:
+  - {fileID: 1619999976}
+  - {fileID: 1913455180}
+  - {fileID: 1835361858}
+  - {fileID: 236810853}
+  - {fileID: 542259963}
+  - {fileID: 805621872}
+  - {fileID: 1289041950}
+  - {fileID: 1322807338}
+  - {fileID: 1045952652}
+  - {fileID: 917260726}
+  - {fileID: 1733027989}
+  - {fileID: 1863722427}
+  - {fileID: 832791476}
+  - {fileID: 819726741}
+  - {fileID: 872766765}
+  - {fileID: 657709274}
+  - {fileID: 505933898}
+  - {fileID: 265836417}
+  - {fileID: 1401522428}
+  - {fileID: 1335835411}
+  - {fileID: 868754131}
+  - {fileID: 1847629723}
+  - {fileID: 1085368845}
+  - {fileID: 722790108}
   drawGizmos: 1
   closed: 1
   defaultColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -2438,6 +2491,44 @@ MonoBehaviour:
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+--- !u!114 &374592929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374592923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25e684130825584b8f58ad1fa298b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needleTip: {fileID: 0}
+  stampLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rayLength: 0.12
+  winDelay: 1.2
+  winSound: {fileID: 0}
+  winParticles: {fileID: 0}
+  tolerance: 0.02
+  maxNoContactTime: 0.6
+  minTimeBetweenSamples: 0.02
+  maxAllowedMisses: 3
+  missCooldown: 0.6
+  resetMissesOnSuccessfulHit: 0
+  candyRenderer: {fileID: 0}
+  darkOnFirstMiss: 0.25
+  darkOnSecondMiss: 0.55
+  darkOnThirdMiss: 0.95
+  darkLerpSpeed: 6
+  brokenCandyPrefab: {fileID: 0}
+  candyRoot: {fileID: 0}
+  breakParticles: {fileID: 0}
+  breakSound: {fileID: 0}
+  playerHitSound: {fileID: 0}
+  playerKillDelay: 0.6
+  restartDelay: 1.5
 --- !u!1 &377715108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -2460,7 +2551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &377715111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2592,7 +2683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &405015372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2658,7 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &419036584
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2767,96 +2858,6 @@ Transform:
   m_Father: {fileID: 883519399}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &443839883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 443839886}
-  - component: {fileID: 443839885}
-  - component: {fileID: 443839884}
-  m_Layer: 0
-  m_Name: CutChecker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &443839884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443839883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25e684130825584b8f58ad1fa298b5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  needleTip: {fileID: 0}
-  stampLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  rayLength: 0.25
-  winDelay: 1.2
-  winSound: {fileID: 0}
-  winParticles: {fileID: 0}
-  tolerance: 0.02
-  maxNoContactTime: 0.6
-  minTimeBetweenSamples: 0.02
-  maxAllowedMisses: 3
-  missCooldown: 0.6
-  resetMissesOnSuccessfulHit: 0
-  candyRenderer: {fileID: 0}
-  darkOnFirstMiss: 0.25
-  darkOnSecondMiss: 0.55
-  darkOnThirdMiss: 0.95
-  darkLerpSpeed: 6
-  brokenCandyPrefab: {fileID: 0}
-  candyRoot: {fileID: 0}
-  breakParticles: {fileID: 0}
-  breakSound: {fileID: 0}
-  playerHitSound: {fileID: 0}
-  playerKillDelay: 0.6
-  restartDelay: 1.5
---- !u!114 &443839885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443839883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86e7a21948d0a64399642067cc6075d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contourPoints: []
-  drawGizmos: 1
-  closed: 1
-  defaultColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  touchedColor: {r: 0, g: 1, b: 0, a: 1}
-  winDelay: 1.2
-  winSound: {fileID: 0}
-  winParticles: {fileID: 0}
---- !u!4 &443839886
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443839883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.005743, y: -12.156863, z: 0.87714124}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &452169715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2960,7 +2961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &455493011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2994,6 +2995,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 1103113701}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &460747197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1103113701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &460747198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3006,7 +3012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &460747199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3148,7 +3154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &484170236
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3162,6 +3168,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &484170237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 484170232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &493913090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3243,6 +3254,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ac9ce668031894543b1a8807a91a8e2f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!4 &505933898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183417503930, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &524553550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -3265,7 +3281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &524553553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3294,6 +3310,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &542259963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182274471436, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &552539899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3493,7 +3514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &559531460
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3544,7 +3565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &563584186
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3848,7 +3869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &619470638
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3862,6 +3883,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &619470639 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 619470634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &624407674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3980,7 +4006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &634513885
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4075,6 +4101,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 922c4b741f0d47d4b933b81d9adf6547, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!4 &657709274 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183858760744, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &677038194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4188,7 +4219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &677038198
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4202,6 +4233,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &677038199 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 677038194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &688129826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4469,6 +4505,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 493913090}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &697748651 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 493913090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &697748652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4481,7 +4522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &697748653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4883,7 +4924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &719246999
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4902,6 +4943,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 1720324507}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &721048246 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1720324507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &721048247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4914,7 +4960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &721048248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4943,6 +4989,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &722790108 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182677409908, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &728476547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -4965,7 +5016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &728476550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5178,7 +5229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &762438529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5212,6 +5263,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 394658176}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &766682624 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 394658176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &766682625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5224,7 +5280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &766682626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,7 +5346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &767980834
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5337,7 +5393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &798000210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5447,6 +5503,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 922c4b741f0d47d4b933b81d9adf6547, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!4 &805621872 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182784676948, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &809271352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5571,8 +5632,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &819726741 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183503933442, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &822087951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -5610,7 +5676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &822087955
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5705,6 +5771,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 922c4b741f0d47d4b933b81d9adf6547, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!4 &832791476 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182082051786, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &838204768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -5727,7 +5798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &838204771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5778,7 +5849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &849314764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5807,9 +5878,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &868754131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183304574851, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &870626178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1764020863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &870626179 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 1764020863}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &870626180
@@ -5824,7 +5905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &870626181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5853,6 +5934,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &872766765 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182222744944, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &873771862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -5890,7 +5976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &873771866
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5941,7 +6027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &876550798
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5989,7 +6075,7 @@ Transform:
   - {fileID: 567920478}
   - {fileID: 2062965948}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &905826526
 PrefabInstance:
@@ -6094,7 +6180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &906079862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6123,6 +6209,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &917260726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183833915293, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &948632547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -6160,7 +6251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &948632551
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6278,9 +6369,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953585968}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1, z: 1.25}
+  m_LocalScale: {x: 1.2499999, y: 1, z: 1.2499999}
   m_Children:
   - {fileID: 405015370}
   - {fileID: 762438527}
@@ -6499,7 +6590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &994987735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6565,7 +6656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1032671566
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6579,6 +6670,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1045952652 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183157441178, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1061622118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6692,7 +6788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1061622122
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6706,6 +6802,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1061622123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1061622118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1085368845 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182047711660, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1091471010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7134,7 +7240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1148534498
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7573,7 +7679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1172635292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7705,7 +7811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1194164987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7771,7 +7877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1218175926
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8060,7 +8166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1232356042
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8074,6 +8180,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1232356043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1232356038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1245194246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -8096,7 +8207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1245194249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8238,7 +8349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1247221590
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8252,6 +8363,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1247221591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1247221586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1258200941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8338,6 +8454,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 328535743}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1276304201 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 328535743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1276304202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8350,7 +8471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1276304203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8402,9 +8523,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284879100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 0.8}
+  m_LocalScale: {x: 0.79999995, y: 1, z: 0.79999995}
   m_Children:
   - {fileID: 563584183}
   - {fileID: 191582226}
@@ -8439,6 +8560,11 @@ Transform:
   m_Father: {fileID: 1619305142}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1289041950 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183158471864, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1307690632 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6104390222037729130, guid: 1dc9592fd43711d4b9e2be68446cdf84, type: 3}
@@ -8456,7 +8582,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86e7a21948d0a64399642067cc6075d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contourPoints: []
+  contourPoints:
+  - {fileID: 178304365}
+  - {fileID: 1438350636}
+  - {fileID: 221918563}
+  - {fileID: 619470639}
+  - {fileID: 1061622123}
+  - {fileID: 484170237}
+  - {fileID: 1490996194}
+  - {fileID: 1361418395}
+  - {fileID: 1232356043}
+  - {fileID: 677038199}
+  - {fileID: 1247221591}
+  - {fileID: 352939042}
+  - {fileID: 460747197}
+  - {fileID: 2007619999}
+  - {fileID: 766682624}
+  - {fileID: 870626179}
+  - {fileID: 1504156840}
+  - {fileID: 298701271}
+  - {fileID: 1957563388}
+  - {fileID: 135591115}
+  - {fileID: 1276304201}
+  - {fileID: 117947091}
+  - {fileID: 697748651}
+  - {fileID: 721048246}
+  - {fileID: 1659280110}
   drawGizmos: 1
   closed: 1
   defaultColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -8464,6 +8615,49 @@ MonoBehaviour:
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+--- !u!114 &1307690637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307690632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25e684130825584b8f58ad1fa298b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needleTip: {fileID: 0}
+  stampLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rayLength: 0.12
+  winDelay: 1.2
+  winSound: {fileID: 0}
+  winParticles: {fileID: 0}
+  tolerance: 0.02
+  maxNoContactTime: 0.6
+  minTimeBetweenSamples: 0.02
+  maxAllowedMisses: 3
+  missCooldown: 0.6
+  resetMissesOnSuccessfulHit: 0
+  candyRenderer: {fileID: 0}
+  darkOnFirstMiss: 0.25
+  darkOnSecondMiss: 0.55
+  darkOnThirdMiss: 0.95
+  darkLerpSpeed: 6
+  brokenCandyPrefab: {fileID: 0}
+  candyRoot: {fileID: 0}
+  breakParticles: {fileID: 0}
+  breakSound: {fileID: 0}
+  playerHitSound: {fileID: 0}
+  playerKillDelay: 0.6
+  restartDelay: 1.5
+--- !u!4 &1322807338 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182495012621, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1335341136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8545,6 +8739,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 922c4b741f0d47d4b933b81d9adf6547, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!4 &1335835411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182563941563, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1339028478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -8567,7 +8766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1339028481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8618,7 +8817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1351245377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8760,7 +8959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1361418394
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8774,6 +8973,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1361418395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1361418390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1386939980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -8811,7 +9015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1386939984
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8825,6 +9029,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1401522428 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182484054129, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1416977941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9036,7 +9245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1438350635
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9050,6 +9259,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1438350636 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1438350631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1465565613
 GameObject:
   m_ObjectHideFlags: 0
@@ -9149,7 +9363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1467472602
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9185,7 +9399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1473925697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9251,7 +9465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1473986360
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9408,7 +9622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1490996193
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9422,9 +9636,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1490996194 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1490996189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1504156839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1229634358}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1504156840 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 1229634358}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1504156841
@@ -9439,7 +9663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1504156842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9810,7 +10034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1548522088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9957,7 +10181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1582841160
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9993,7 +10217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1585472938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10257,7 +10481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1609305700
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10275,6 +10499,11 @@ SphereCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6104390222037729129, guid: 1dc9592fd43711d4b9e2be68446cdf84, type: 3}
   m_PrefabInstance: {fileID: 6104390222598497839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1619999976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183213972239, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1628722375
 GameObject:
@@ -10538,6 +10767,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 905826526}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1659280110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 905826526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1659280111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10550,7 +10784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1659280112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10616,7 +10850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1670077453
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10792,6 +11026,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 922c4b741f0d47d4b933b81d9adf6547, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a641797a960d343867dd596b08a863, type: 3}
+--- !u!4 &1733027989 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778181954123950, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1744329483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11072,7 +11311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1763087129
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11108,7 +11347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1763428660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11245,7 +11484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1791504409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11296,7 +11535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1795815377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11362,7 +11601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1813005322
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11376,6 +11615,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1835361858 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182347043452, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1847629723 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183964127148, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848261478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
@@ -11398,7 +11647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1848261481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11427,6 +11676,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.005
   m_Center: {x: 0.000000044703484, y: 0, z: 0}
+--- !u!4 &1863722427 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778183011605416, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1864074241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11715,6 +11969,11 @@ Transform:
   m_Father: {fileID: 883519399}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1913455180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 953778182800925089, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
+  m_PrefabInstance: {fileID: 2054739518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1917582906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11833,7 +12092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &1949407782
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12095,6 +12354,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 1957559682}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1957563388 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 1957559682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1957563389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12107,7 +12371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1957563390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12158,7 +12422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &1971208797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12516,6 +12780,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6867185076985813644, guid: 58a641797a960d343867dd596b08a863, type: 3}
   m_PrefabInstance: {fileID: 2002610490}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2007619999 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3366530284322346136, guid: 58a641797a960d343867dd596b08a863, type: 3}
+  m_PrefabInstance: {fileID: 2002610490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2007620000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12528,7 +12797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!114 &2007620001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12594,7 +12863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &2014653929
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12726,7 +12995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b065dbf6cea4bb9b7fe219682f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contour: {fileID: 345667223}
+  contour: {fileID: 1307690636}
 --- !u!135 &2017405918
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12747,9 +13016,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 498052686, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498052686, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
+      propertyPath: darkOnFirstMiss
+      value: 0.346
+      objectReference: {fileID: 0}
     - target: {fileID: 498052687, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4517978453119329747, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
       propertyPath: m_Name
@@ -12761,7 +13038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8788702167101468760, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8788702167101468760, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13023,19 +13300,19 @@ PrefabInstance:
     - target: {fileID: 2559400563231124156, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563258475819, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563259651914, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563261888649, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563293766935, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -13043,211 +13320,211 @@ PrefabInstance:
     - target: {fileID: 2559400563301445217, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563301501322, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563425547104, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563440030198, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563481100142, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563530928926, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563556936832, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563570601331, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563571834220, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563573891752, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563575966734, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563584357050, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563587702389, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563608763864, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563610635762, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563684770277, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563711430429, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563745336053, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563781549171, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563806935044, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563820321369, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563891980815, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563909891187, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563925063484, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563948246495, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400563957670894, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564066412926, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564104263002, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564126359876, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564161672578, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564170104097, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564183100844, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564205008715, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564240761720, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564241384166, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564257597679, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564300602880, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564315564944, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564345134832, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564365607282, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564381328009, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564428352766, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564439389177, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564485571945, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564492210819, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564537430544, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564544412328, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564547517675, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564552141538, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564598230809, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564625189503, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564696036308, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564714554037, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -13255,86 +13532,86 @@ PrefabInstance:
     - target: {fileID: 2559400564716840977, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564748368258, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564758554921, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564819246208, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564848110546, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564888895316, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564944916088, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564947382474, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400564989814426, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565044007497, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565056979993, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565065534675, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565089401644, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565095677929, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565100844257, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565179720892, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565240859850, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565250712430, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565260021766, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 2559400565323273733, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: contour
       value: 
-      objectReference: {fileID: 345667223}
+      objectReference: {fileID: 374592928}
     - target: {fileID: 4588029451511983012, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4588029451511983012, guid: 41de7e6b44eafcb488e776b3226bb189, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13608,7 +13885,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104390223167826966, guid: 1dc9592fd43711d4b9e2be68446cdf84, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6104390223167826966, guid: 1dc9592fd43711d4b9e2be68446cdf84, type: 3}
       propertyPath: m_LocalPosition.x
