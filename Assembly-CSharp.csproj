@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D8BFBC48-1C66-C71B-CD20-73B9273F5641}</ProjectGuid>
+    <ProjectGuid>{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -839,23 +839,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.csproj">
-      <Project>{68DD9C1F-E450-7DF6-22BB-23A841F58148}</Project>
+      <Project>{B653F1F5-7965-6873-4332-53B36FCE5C0E}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.Hands</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj">
-      <Project>{B8945384-BA90-12DD-85A7-DD8AA72CF98D}</Project>
+      <Project>{22EAF535-0723-5EA8-57BD-C9DFDA8B0C0B}</Project>
       <Name>Unity.XR.Hands.Samples.VisualizerSample</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj">
-      <Project>{E561F493-40B5-9E5B-962B-0EAA4BDCD43D}</Project>
+      <Project>{1D5C05F3-EAF8-B160-9841-8B2D14649E98}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.Hands.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj">
-      <Project>{28262BA8-2A26-B7CE-69CF-5D4CC8599073}</Project>
+      <Project>{E002D655-ACA6-B14E-900D-07D1C12CA827}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
-      <Project>{982F4FDB-1C41-CECB-9F83-626580833EE6}</Project>
+      <Project>{3EC9A347-6A18-7797-2E92-5BF4BD9266FC}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
   </ItemGroup>

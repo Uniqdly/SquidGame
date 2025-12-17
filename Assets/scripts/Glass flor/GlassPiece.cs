@@ -4,6 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class GlassPiece : MonoBehaviour
 {
+    [Header("Jump")]
+    public Transform landingPoint;
+
     [Header("Behavior")]
     [Tooltip("Если true — эта плитка помечена как ломкая (GlassController или ручная настройка)")]
     public bool isBreakable = false;
