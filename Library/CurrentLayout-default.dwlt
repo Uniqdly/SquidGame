@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 144
+  controlID: 125
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 68
+  controlID: 80
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 69
+  controlID: 55
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,9 +318,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.0704546, y: 20.444471, z: -12.203312}
+    m_Target: {x: -0.49811986, y: 3.0139508, z: 15.667899}
     speed: 2
-    m_Value: {x: -2.0704546, y: 20.444471, z: -12.203312}
+    m_Value: {x: -0.49811986, y: 3.0139508, z: 15.667899}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -367,13 +367,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.14587511, y: -0.84097826, z: -0.25922084, w: -0.4511784}
+    m_Target: {x: -0.2008457, y: 0.16134469, z: -0.026963597, w: -0.9655585}
     speed: 2
-    m_Value: {x: 0.14592755, y: -0.8412806, z: -0.25931403, w: -0.4513406}
+    m_Value: {x: -0.20084569, y: 0.16134469, z: -0.026963595, w: -0.96555847}
   m_Size:
-    m_Target: 0.2862792
+    m_Target: 0.487754
     speed: 2
-    m_Value: 0.2862792
+    m_Value: 0.487754
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -419,9 +419,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 528
+    y: 787.2
     width: 1494.2
-    height: 535.4
+    height: 276.20007
   m_ViewDataDictionary: {fileID: 0}
   mForceToOpen: 0
 --- !u!114 &14
@@ -444,10 +444,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 402.4
+    x: 401.6
     y: 73.6
-    width: 1090.7999
-    height: 619
+    width: 1091.6
+    height: 692.6
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &15
 MonoBehaviour:
@@ -487,22 +487,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/HornetRifle
   m_LastFoldersGridSize: 57
   m_LastProjectPath: "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 115.79993}
-    m_SelectedIDs: 404f0000
-    m_LastClickedID: 20288
-    m_ExpandedIDs: 00000000284f0000424f000000ca9a3b
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 0c510000
+    m_LastClickedID: 20748
+    m_ExpandedIDs: 000000000c5100000e510000105100001251000014510000165100001851000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -530,7 +530,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000284f0000
+    m_ExpandedIDs: 000000000c5100000e5100001051000012510000145100001651000018510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -582,7 +582,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 49.799927}
     m_GridSize: 57
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -653,7 +653,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2ae0ffffb0f9ffff66fbffff
+      m_ExpandedIDs: 66fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -762,9 +762,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.25871375, y: -0.74085766, z: 0.45259458, w: 0.42349556}
+    m_Target: {x: 0.25496203, y: -0.74497104, z: 0.44140932, w: 0.4303063}
     speed: 2
-    m_Value: {x: 0.25871462, y: -0.74086016, z: 0.45259613, w: 0.423497}
+    m_Value: {x: -0.25496203, y: 0.74497104, z: -0.4414093, w: -0.43030626}
   m_Size:
     m_Target: 17.67767
     speed: 2
