@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
@@ -7,30 +7,33 @@ using UnityEngine.XR;
 public class ParabolicJumpSelector : MonoBehaviour
 {
     [Header("Targets selection")]
-    [Tooltip("Используемый контроллер для прицеливания (левый или правый). Если оба заданы — оба работают")]
     public Transform leftController;
     public Transform rightController;
 
     [Header("Jump parameters")]
     public float jumpDuration = 0.6f;
     public float arcHeight = 1.0f;
-    public float maxSelectDistance = 6f; // макс дистанция выбора плитки
-    public LayerMask glassLayer = ~0; // слой, на котором расположены стеклянные плитки
+    public float maxSelectDistance = 6f;
+    public LayerMask glassLayer = ~0;
 
     [Header("Input")]
-    [Tooltip("Считывать gripButton (grab) для запуска прыжка")]
     public bool useGripButton = true;
 
     [Header("Player reference")]
-    [Tooltip("Transform XR Origin (тот объект, который будет перемещаться)")]
     public Transform playerRoot;
-    [Tooltip("Optional Rigidbody on player; will be made kinematic during jump")]
     public Rigidbody playerRigidbody;
 
-    // internal
+    [Header("Landing")]
+    public float landingYOffset = 0.05f;
+
+    // internals
     GlassPiece highlighted = null;
-    GlassPiece lastHighlighted = null;
+    RaycastHit? selectedHit = null; // в†ђ РќРћР’РћР•
     bool busy = false;
+
+    // state РґР»СЏ edge detection (С‡С‚РѕР±С‹ РЅРµ РґС‘СЂРіР°Р»Рѕ РїСЂРё СѓРґРµСЂР¶Р°РЅРёРё)
+    bool prevGripLeft = false;
+    bool prevGripRight = false;
 
     void Awake()
     {
@@ -42,13 +45,15 @@ public class ParabolicJumpSelector : MonoBehaviour
     {
         if (busy) return;
 
-        // 1) проверяем оба контроллера на наведённый объект (приоритет — правый, затем левый)
         bool found = TryUpdateHighlightFromController(rightController) || TryUpdateHighlightFromController(leftController);
 
-        // 2) если нажали grab (grip), то начинаем прыжок к выделенной плитке
-        if (highlighted != null && useGripButton && GripPressedThisFrame())
+        if (useGripButton && highlighted != null)
         {
-            StartCoroutine(DoParabolicJumpTo(highlighted.transform));
+            bool gripPressed = GripPressedThisFrame();
+            if (gripPressed)
+            {
+                StartCoroutine(DoParabolicJumpTo(highlighted.transform));
+            }
         }
     }
 
@@ -60,66 +65,107 @@ public class ParabolicJumpSelector : MonoBehaviour
         if (Physics.Raycast(r, out RaycastHit hit, maxSelectDistance, glassLayer, QueryTriggerInteraction.Ignore))
         {
             var gp = hit.collider.GetComponentInParent<GlassPiece>();
-            if (gp != null)
+            if (gp != null && !gp.IsBroken())
             {
-                SetHighlight(gp);
+                SetHighlight(gp, hit);
                 return true;
             }
         }
-
-        // если ничего не найдено — снимем подсветку (только если текущим был этот контроллер)
         ClearHighlight();
         return false;
     }
 
-    void SetHighlight(GlassPiece gp)
+    void SetHighlight(GlassPiece gp, RaycastHit hit)
     {
         if (highlighted == gp) return;
         if (highlighted != null) highlighted.Highlight(false);
         highlighted = gp;
+        selectedHit = hit;
         if (highlighted != null) highlighted.Highlight(true);
     }
 
     void ClearHighlight()
     {
-        if (highlighted != null) { highlighted.Highlight(false); highlighted = null; }
+        if (highlighted != null)
+        {
+            highlighted.Highlight(false);
+            highlighted = null;
+        }
+        selectedHit = null;
     }
 
     bool GripPressedThisFrame()
     {
-        // проверяем все контроллеры — если любой контроллер только что нажал grip
         var devices = new List<InputDevice>();
         InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller, devices);
 
+        bool anyPressed = false;
+        bool leftPressed = false, rightPressed = false;
+
         foreach (var d in devices)
         {
+            bool isLeft = d.characteristics.HasFlag(InputDeviceCharacteristics.Left);
+            bool isRight = d.characteristics.HasFlag(InputDeviceCharacteristics.Right);
+
             if (d.TryGetFeatureValue(CommonUsages.gripButton, out bool val) && val)
             {
-                // важно: это не WasPressedThisFrame, но для простоты — достаточно
-                // (если нужна точность по кадрам — нужно хранить предыдущее состояние)
-                return true;
+                if (isLeft) leftPressed = true;
+                else if (isRight) rightPressed = true;
+                else anyPressed = true; // unknown hand в†’ СЃС‡РёС‚Р°РµРј РєР°Рє РѕР±С‰РёР№
             }
         }
-        return false;
+
+        bool result = false;
+        if (leftPressed && !prevGripLeft) result = true;
+        if (rightPressed && !prevGripRight) result = true;
+        if (anyPressed && !prevGripLeft && !prevGripRight) result = true;
+
+        prevGripLeft = leftPressed;
+        prevGripRight = rightPressed;
+
+        return result;
     }
 
     IEnumerator DoParabolicJumpTo(Transform target)
     {
         if (busy) yield break;
         if (target == null) yield break;
+        if (highlighted == null) { busy = false; yield break; }
 
         busy = true;
-        // снимем подсветку
         ClearHighlight();
 
         Vector3 startPos = playerRoot.position;
-        Vector3 endPos = target.position;
+        Vector3 endPos = startPos;
 
-        // optionally align heights (если XR pivot — на высоте головы, можно корректировать y)
-        // здесь предполагаем pivot у playerRoot на "ступнях", поэтому используем endPos.y = startPos.y
-        endPos = new Vector3(endPos.x, startPos.y, endPos.z);
+        if (selectedHit.HasValue)
+        {
+            RaycastHit hit = selectedHit.Value;
 
-        // отключаем физику, если есть
+            Renderer[] rends = highlighted.GetComponentsInChildren<Renderer>(true);
+            if (rends.Length > 0)
+            {
+                Bounds b = rends[0].bounds;
+                for (int i = 1; i < rends.Length; i++)
+                    b.Encapsulate(rends[i].bounds);
+
+                Vector3 projectedCenter = b.center - Vector3.Dot(b.center - hit.point, hit.normal) * hit.normal;
+                endPos = projectedCenter + hit.normal * landingYOffset;
+            }
+            else
+            {
+                endPos = hit.point + hit.normal * landingYOffset;
+            }
+        }
+        else
+        {
+            Renderer rend = target.GetComponent<Renderer>();
+            if (rend != null)
+                endPos = new Vector3(rend.bounds.center.x, rend.bounds.min.y + landingYOffset, rend.bounds.center.z);
+            else
+                endPos = new Vector3(target.position.x, target.position.y + landingYOffset, target.position.z);
+        }
+
         bool hadRb = playerRigidbody != null;
         if (hadRb)
         {
@@ -141,26 +187,19 @@ public class ParabolicJumpSelector : MonoBehaviour
             yield return null;
         }
 
-        // убедимся в финальной позиции
         playerRoot.position = endPos;
 
-        // restore rb
         if (hadRb)
         {
             playerRigidbody.isKinematic = false;
             playerRigidbody.velocity = Vector3.zero;
         }
 
-        // при приземлении — вызов Break() если плитка ломкая
-        var gp = target.GetComponentInParent<GlassPiece>();
-        if (gp != null)
+        // РћР±СЂР°Р±РѕС‚РєР° РїР»РёС‚РєРё вЂ” РёСЃРїРѕР»СЊР·СѓРµРј highlighted, С‚.Рє. РѕРЅ Р°РєС‚СѓР°Р»РµРЅ
+        if (highlighted != null)
         {
-            if (gp.isBreakable)
-                gp.Break();
-            else
-            {
-                // safe feedback (можно добавить звук)
-            }
+            if (highlighted.isBreakable)
+                highlighted.Break();
         }
 
         busy = false;

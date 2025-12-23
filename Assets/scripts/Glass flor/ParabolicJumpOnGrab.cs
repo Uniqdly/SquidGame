@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;    // New Input System
-using UnityEngine.XR;            // XR fallback
+using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using XR = UnityEngine.XR;
 
 [DisallowMultipleComponent]
 public class ParabolicJumpOnGrab : MonoBehaviour
@@ -23,7 +24,7 @@ public class ParabolicJumpOnGrab : MonoBehaviour
     public LayerMask groundMask = ~0;
 
     [Header("Jump Cooldown")]
-    public float jumpCooldown = 1.0f;   // задержка между прыжками (сек)
+    public float jumpCooldown = 1.0f;
     float lastJumpTime = -999f;
 
     [Header("Player (to move)")]
@@ -31,20 +32,17 @@ public class ParabolicJumpOnGrab : MonoBehaviour
     public Rigidbody playerRigidbody;
 
     [Header("Landing / pause")]
-    [Tooltip("Вертикальный оффсет от поверхности при посадке (м)")]
     public float landingYOffset = 0.05f;
-    [Tooltip("Время в секундах, которое игрок будет замирать на центре платформы после приземления")]
     public float landingPause = 0.18f;
 
     [Header("Highlighting")]
     public bool enableHighlight = true;
 
-    [Header("Input (assign Input Action here)")]
-    [Tooltip("Input Action that should trigger jump. Bind it to keyboard Space and controller button(s).")]
+    [Header("Input")]
     public InputActionProperty jumpAction;
 
-    // internals
     GlassPiece highlighted = null;
+    RaycastHit? lastHit = null;
     bool busy = false;
     bool prevJump = false;
 
@@ -52,33 +50,23 @@ public class ParabolicJumpOnGrab : MonoBehaviour
     {
         if (playerRoot == null) playerRoot = transform;
         if (playerRigidbody == null && playerRoot != null) playerRigidbody = playerRoot.GetComponent<Rigidbody>();
-
-        // enable action if provided
-        if (jumpAction != null && jumpAction.action != null)
-        {
-            try { jumpAction.action.Enable(); } catch { }
-        }
+        if (jumpAction.action != null) jumpAction.action.Enable();
     }
 
     void Update()
     {
         if (busy) return;
 
-        // selection from controllers
         bool found = false;
         if (rightController != null) found = TrySelectFromController(rightController);
         if (!found && leftController != null) found = TrySelectFromController(leftController);
         if (!found) ClearHighlight();
 
-        // input: priority to InputAction (action-based), then keyboard/gamepad, then XR legacy
         bool jumpPressed = IsJumpTriggered();
-
-        // rising edge: pressed now, wasn't pressed prev frame
         if (jumpPressed && !prevJump)
         {
             if (highlighted != null)
             {
-                // проверяем cooldown между прыжками
                 if (Time.time - lastJumpTime < jumpCooldown)
                 {
                     float wait = jumpCooldown - (Time.time - lastJumpTime);
@@ -86,13 +74,12 @@ public class ParabolicJumpOnGrab : MonoBehaviour
                 }
                 else if (requireGrounded && !IsGrounded())
                 {
-                    prevJump = jumpPressed; // сохраняем текущее состояние
                     Debug.Log("[PJ] Grounded check failed, not jumping");
                 }
                 else
                 {
                     lastJumpTime = Time.time;
-                    StartCoroutine(ParabolicJumpTo(highlighted.transform));
+                    StartCoroutine(ParabolicJumpTo(highlighted));
                 }
             }
             else
@@ -113,19 +100,20 @@ public class ParabolicJumpOnGrab : MonoBehaviour
             var gp = hit.collider.GetComponentInParent<GlassPiece>();
             if (gp != null && !gp.IsBroken())
             {
-                SetHighlight(gp);
+                SetHighlight(gp, hit);
                 return true;
             }
         }
         return false;
     }
 
-    void SetHighlight(GlassPiece gp)
+    void SetHighlight(GlassPiece gp, RaycastHit hit)
     {
         if (!enableHighlight) return;
         if (highlighted == gp) return;
         if (highlighted != null) highlighted.Highlight(false);
         highlighted = gp;
+        lastHit = hit;
         if (highlighted != null) highlighted.Highlight(true);
     }
 
@@ -137,63 +125,40 @@ public class ParabolicJumpOnGrab : MonoBehaviour
             highlighted.Highlight(false);
             highlighted = null;
         }
+        lastHit = null;
     }
 
     bool IsJumpTriggered()
     {
-        // 1) Action-based (preferred) — supports multiple bindings (keyboard + controller)
-        if (jumpAction != null && jumpAction.action != null)
+        if (jumpAction.action != null)
         {
             var act = jumpAction.action;
-            // Use .WasPerformedThisFrame or .triggered depending on action type
-            // WasPressedThisFrame exists for Button interactions; Use triggered as generic
-            try
-            {
-                if (act.WasPressedThisFrame()) return true; // good for button actions
-            }
-            catch { }
+            try { if (act.WasPressedThisFrame()) return true; } catch { }
             if (act.triggered) return true;
         }
 
-        // 2) Keyboard fallback (Editor test)
-        if (Keyboard.current != null)
-        {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame) return true;
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Space)) return true;
-        }
+        if (Keyboard.current?.spaceKey.wasPressedThisFrame == true) return true;
+        if (Input.GetKeyDown(KeyCode.Space)) return true;
+        if (Gamepad.current?.buttonSouth.wasPressedThisFrame == true) return true;
 
-        // 3) Gamepad fallback (optional)
-        if (Gamepad.current != null)
-        {
-            if (Gamepad.current.buttonSouth.wasPressedThisFrame) return true;
-        }
-
-        // 4) Legacy XR InputDevices fallback (if controllers present)
-        var devices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(UnityEngine.XR.InputDeviceCharacteristics.Controller, devices);
+        var devices = new List<XR.InputDevice>();
+        XR.InputDevices.GetDevicesWithCharacteristics(XR.InputDeviceCharacteristics.Controller, devices);
         if (devices.Count == 0)
         {
-            // also try XRNode query
-            var left = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.LeftHand);
-            var right = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.RightHand);
+            var left = XR.InputDevices.GetDeviceAtXRNode(XR.XRNode.LeftHand);
+            var right = XR.InputDevices.GetDeviceAtXRNode(XR.XRNode.RightHand);
             if (left.isValid) devices.Add(left);
             if (right.isValid) devices.Add(right);
         }
 
         foreach (var d in devices)
         {
-            // check boolean usages first
-            if (d.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out bool p) && p) return true;
-            if (d.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out bool s) && s) return true;
-            if (d.TryGetFeatureValue(UnityEngine.XR.CommonUsages.gripButton, out bool gbtn) && gbtn) return true;
-            if (d.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out bool tbtn) && tbtn) return true;
-
-            // analog
-            if (d.TryGetFeatureValue(UnityEngine.XR.CommonUsages.grip, out float g) && g > 0.55f) return true;
-            if (d.TryGetFeatureValue(UnityEngine.XR.CommonUsages.trigger, out float tr) && tr > 0.55f) return true;
+            if (d.TryGetFeatureValue(XR.CommonUsages.primaryButton, out bool p) && p) return true;
+            if (d.TryGetFeatureValue(XR.CommonUsages.secondaryButton, out bool s) && s) return true;
+            if (d.TryGetFeatureValue(XR.CommonUsages.gripButton, out bool gbtn) && gbtn) return true;
+            if (d.TryGetFeatureValue(XR.CommonUsages.triggerButton, out bool tbtn) && tbtn) return true;
+            if (d.TryGetFeatureValue(XR.CommonUsages.grip, out float g) && g > 0.55f) return true;
+            if (d.TryGetFeatureValue(XR.CommonUsages.trigger, out float tr) && tr > 0.55f) return true;
         }
 
         return false;
@@ -205,59 +170,84 @@ public class ParabolicJumpOnGrab : MonoBehaviour
         return Physics.Raycast(playerRoot.position, Vector3.down, groundCheckDistance, mask);
     }
 
-    IEnumerator ParabolicJumpTo(Transform target)
+    Transform GetNearestController()
     {
-        if (busy) yield break;
-        if (target == null) yield break;
+        Transform best = null;
+        float bestDist = float.MaxValue;
+        if (rightController != null)
+        {
+            float d = Vector3.Distance(rightController.position, playerRoot.position);
+            if (d < bestDist) { bestDist = d; best = rightController; }
+        }
+        if (leftController != null)
+        {
+            float d = Vector3.Distance(leftController.position, playerRoot.position);
+            if (d < bestDist) { best = leftController; }
+        }
+        return best;
+    }
 
+    IEnumerator ParabolicJumpTo(GlassPiece targetPiece)
+    {
+        if (busy || targetPiece == null) { busy = false; yield break; }
         busy = true;
         ClearHighlight();
 
         Vector3 startPos = playerRoot.position;
+        Vector3 endPos = startPos;
 
-        // --- вычисляем корректную целевую позицию (центр поверхности target) ---
-        Vector3 center = target.position;
-        bool foundBounds = false;
+        Transform nearestCtrl = GetNearestController();
+        RaycastHit hit = lastHit ?? new RaycastHit();
+        bool hasValidHit = lastHit.HasValue;
 
-        // 1) попробуем Renderer.bounds (обычно лучше для визуального центра)
-        var rend = target.GetComponentInParent<Renderer>();
-        if (rend != null)
+        if (!hasValidHit && nearestCtrl != null)
         {
-            center = rend.bounds.center;
-            foundBounds = true;
-        }
-        else
-        {
-            // 2) если Renderer нет — попробуем Collider.bounds (например у плитки есть коллайдер)
-            var colComp = target.GetComponentInParent<Collider>();
-            if (colComp != null)
+            Ray ray = new Ray(nearestCtrl.position, nearestCtrl.forward);
+            if (Physics.Raycast(ray, out RaycastHit newHit, maxSelectDistance, glassLayer, QueryTriggerInteraction.Ignore))
             {
-                center = colComp.bounds.center;
-                foundBounds = true;
-            }
-            else
-            {
-                // 3) если и этого нет — попытаемся собрать все renderers в родителях/детях и усреднить центры
-                var rends = target.GetComponentsInParent<Renderer>();
-                if (rends != null && rends.Length > 0)
+                var gp = newHit.collider.GetComponentInParent<GlassPiece>();
+                if (gp == targetPiece)
                 {
-                    Bounds b = rends[0].bounds;
-                    for (int i = 1; i < rends.Length; i++) b.Encapsulate(rends[i].bounds);
-                    center = b.center;
-                    foundBounds = true;
+                    hit = newHit;
+                    hasValidHit = true;
                 }
             }
         }
 
-        // endPos: по горизонтали — центр поверхности, по вертикали — оставляем высоту игрока (не занижаем голову)
-        Vector3 endPos = new Vector3(center.x, startPos.y, center.z);
+        if (hasValidHit)
+        {
+            Vector3 surfacePoint = hit.point;
+            Vector3 normal = hit.normal;
 
-        // --- сохранение и переключение Rigidbody (как раньше) ---
+            if (targetPiece.landingPoint != null)
+            {
+                Vector3 projected = targetPiece.landingPoint.position - Vector3.Dot(targetPiece.landingPoint.position - surfacePoint, normal) * normal;
+                endPos = projected + normal * landingYOffset;
+            }
+            else
+            {
+                endPos = surfacePoint + normal * landingYOffset;
+            }
+        }
+        else
+        {
+            Renderer rend = targetPiece.GetComponent<Renderer>();
+            if (rend != null)
+            {
+                Bounds b = rend.bounds;
+                endPos = new Vector3(b.center.x, b.min.y + landingYOffset, b.center.z);
+            }
+            else
+            {
+                endPos = targetPiece.transform.position;
+                endPos.y += landingYOffset;
+            }
+        }
+
         bool hadRb = playerRigidbody != null;
-        CollisionDetectionMode prevMode = CollisionDetectionMode.Discrete;
+        CollisionDetectionMode prevMode = hadRb ? playerRigidbody.collisionDetectionMode : CollisionDetectionMode.Discrete;
         if (hadRb)
         {
-            prevMode = playerRigidbody.collisionDetectionMode;
             playerRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             playerRigidbody.velocity = Vector3.zero;
             playerRigidbody.isKinematic = true;
@@ -268,76 +258,41 @@ public class ParabolicJumpOnGrab : MonoBehaviour
         {
             t += Time.deltaTime;
             float f = Mathf.Clamp01(t / jumpDuration);
-
             Vector3 horiz = Vector3.Lerp(startPos, endPos, f);
             float arc = 4f * arcHeight * f * (1f - f);
             float y = Mathf.Lerp(startPos.y, endPos.y, f) + arc;
             playerRoot.position = new Vector3(horiz.x, y, horiz.z);
-
             yield return null;
         }
 
-        // финальная позиция — немного выше поверхности, чтобы избежать пересечения
-        float surfaceY = float.MinValue;
-        if (foundBounds)
-        {
-            var finalRend = target.GetComponentInParent<Renderer>();
-            if (finalRend != null)
-                surfaceY = finalRend.bounds.max.y;
-            else
-            {
-                var finalCol = target.GetComponentInParent<Collider>();
-                if (finalCol != null)
-                    surfaceY = finalCol.bounds.max.y;
-            }
-        }
+        playerRoot.position = endPos;
 
-        Vector3 finalPos;
-        if (surfaceY != float.MinValue)
-            finalPos = new Vector3(center.x, surfaceY + landingYOffset, center.z);
-        else
-            finalPos = new Vector3(endPos.x, endPos.y + landingYOffset, endPos.z);
+        if (landingPause > 0f) yield return new WaitForSeconds(landingPause);
 
-        // сразу ставим позицию — игрок оказывается в центре платформы
-        playerRoot.position = finalPos;
-
-        // --- ПАУЗА: игрок замирает на центре платформы на landingPause секунд ---
-        if (landingPause > 0f)
-        {
-            yield return new WaitForSeconds(landingPause);
-        }
-
-        // --- затем ждём один физический шаг и стабилизируем Rigidbody, чтобы избежать подпрыгов ---
         if (hadRb)
         {
             yield return new WaitForFixedUpdate();
-
-            playerRigidbody.velocity = Vector3.zero;
-            playerRigidbody.angularVelocity = Vector3.zero;
-            playerRigidbody.Sleep();
-
-            playerRigidbody.collisionDetectionMode = prevMode;
-            playerRigidbody.isKinematic = false;
-
-            playerRigidbody.velocity = Vector3.zero;
-            playerRigidbody.angularVelocity = Vector3.zero;
+            if (playerRigidbody != null)
+            {
+                playerRigidbody.velocity = Vector3.zero;
+                playerRigidbody.angularVelocity = Vector3.zero;
+                playerRigidbody.Sleep();
+                playerRigidbody.collisionDetectionMode = prevMode;
+                playerRigidbody.isKinematic = false;
+                playerRigidbody.velocity = Vector3.zero;
+                playerRigidbody.angularVelocity = Vector3.zero;
+            }
         }
 
-        // обработка по типу платформы (если это FinishPlatform или GlassPiece)
-        var finish = target.GetComponentInParent<FinishPlatform>();
+        var finish = targetPiece.GetComponent<FinishPlatform>();
+        if (finish == null) finish = targetPiece.GetComponentInParent<FinishPlatform>();
         if (finish != null)
         {
-            Debug.Log("[PJ] Landed on FinishPlatform: " + finish.name);
             finish.OnPlayerArrive();
         }
-        else
+        else if (targetPiece.isBreakable)
         {
-            var gp = target.GetComponentInParent<GlassPiece>();
-            if (gp != null && gp.isBreakable)
-            {
-                Debug.Log("[PJ] Landed on fragile " + gp.name + " — calling Break()");
-                gp.Break();
-            }
+            targetPiece.Break();
         }
 
         busy = false;
