@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\glass flor\\glasspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\glasspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\stampcontour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\stampcontour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\needlecollisionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\needlecollisionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\contourpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\contourpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\contourcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\contourcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|c:\\users\\yuryc\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\squidgame\\assets\\scripts\\glass flor\\parabolicjumpongrab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +31,16 @@
       "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\parabolicjumpselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\glass flor\\glasspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\glasspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\glass flor\\jumpanchor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\jumpanchor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\glass flor\\glasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\glasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\stampcontour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\stampcontour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\candypicklimiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,18 +75,6 @@
       "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\playerrigidbodygravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\needlecollisionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\needlecollisionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\contourcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\contourcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\contourpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\contourpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\StampContourFromMask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\CaramelGame Skript\\StampContourFromMask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -94,19 +94,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JumpAnchor.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\JumpAnchor.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\JumpAnchor.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\JumpAnchor.cs",
-              "RelativeToolTip": "Assets\\scripts\\Glass flor\\JumpAnchor.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAswCoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T12:48:57.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ParabolicJumpSelector.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\ParabolicJumpSelector.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\ParabolicJumpSelector.cs",
@@ -114,61 +102,38 @@
               "RelativeToolTip": "Assets\\scripts\\Glass flor\\ParabolicJumpSelector.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAIwEAAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T20:07:47.236Z"
+              "WhenOpened": "2025-12-16T20:07:47.236Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ParabolicJumpOnGrab.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\ParabolicJumpOnGrab.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\ParabolicJumpOnGrab.cs",
               "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\ParabolicJumpOnGrab.cs",
               "RelativeToolTip": "Assets\\scripts\\Glass flor\\ParabolicJumpOnGrab.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAwwIcAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T15:27:04.767Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SimpleDeathOnFloor.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
-              "RelativeToolTip": "Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T06:55:12.771Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "VisualStudioIntegration.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAUwDYAAADIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T16:50:30.564Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "GlassPiece.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\GlassPiece.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\GlassPiece.cs",
               "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\GlassPiece.cs",
               "RelativeToolTip": "Assets\\scripts\\Glass flor\\GlassPiece.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAQwOcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAKwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-15T16:50:12.925Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "TwoHandedGrabMoveProvider.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.3.2\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs",
@@ -180,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "GlassController.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\GlassController.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\GlassController.cs",
@@ -192,31 +157,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "CutChecker.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
               "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
               "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
-              "ViewState": "AgIAAMYBAAAAAAAAAAAQwOkBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABcBAAAAAAAAAAAiwDABAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T10:29:44.27Z"
+              "WhenOpened": "2025-11-04T10:29:44.27Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "StampContour.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
               "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
               "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\StampContour.cs",
-              "ViewState": "AgIAAK8AAAAAAAAAAAAcwMAAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAcwMUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T10:25:41.927Z"
+              "WhenOpened": "2025-11-04T10:25:41.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
+              "Title": "ContourCollision.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T11:58:52.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ContourPoint.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T05:38:31.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NeedleCollisionLogger.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
+              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAAANEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T11:23:00.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "VisualStudioIntegration.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18\\Editor\\VisualStudioIntegration.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAUwDYAAADIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T16:50:30.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SimpleDeathOnFloor.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
+              "RelativeToolTip": "Assets\\scripts\\Glass flor\\SimpleDeathOnFloor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T06:55:12.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "JumpAnchor.cs",
+              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\JumpAnchor.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\JumpAnchor.cs",
+              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\JumpAnchor.cs",
+              "RelativeToolTip": "Assets\\scripts\\Glass flor\\JumpAnchor.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAswCoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-21T12:48:57.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "CandyPickLimiter.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CandyPickLimiter.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CandyPickLimiter.cs",
@@ -228,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PositionBasedRLGController.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Red light Games\\PositionBasedRLGController.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Red light Games\\PositionBasedRLGController.cs",
@@ -240,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "FinishPlatform.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\FinishPlatform.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\FinishPlatform.cs",
@@ -263,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "GlassFragile.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\GlassFragile.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\GlassFragile.cs",
@@ -275,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "PlayerRigidbodyGravity.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\PlayerRigidbodyGravity.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\PlayerRigidbodyGravity.cs",
@@ -284,42 +326,6 @@
               "ViewState": "AgIAADIAAAAAAAAAAIBJwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T08:47:25.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ContourPoint.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
-              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\ContourPoint.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T05:38:31.314Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ContourCollision.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
-              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\ContourCollision.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T11:58:52.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "NeedleCollisionLogger.cs",
-              "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
-              "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
-              "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\NeedleCollisionLogger.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwNEAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T11:23:00.142Z"
             },
             {
               "$type": "Document",
