@@ -5179,9 +5179,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -13560,9 +13562,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -23997,9 +24001,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -43193,9 +43199,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -45657,9 +45665,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 8300000, guid: 697da49f162580c4b9b85cad409b1545, type: 3}
   winDelay: 1.2
-  winSound: {fileID: 0}
+  winSound: {fileID: 8300000, guid: 106a79937806544489daae1122848335, type: 3}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -47930,9 +47940,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -49281,9 +49293,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -53533,9 +53547,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -78180,9 +78196,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -79417,9 +79435,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -82355,9 +82375,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -87378,7 +87400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 6.067, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92437,9 +92459,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -95627,9 +95651,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -97136,9 +97162,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -103155,9 +103183,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -107658,9 +107688,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -107837,9 +107869,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -107930,9 +107964,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -120079,9 +120115,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -124618,9 +124656,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -127231,9 +127271,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -127324,9 +127366,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -136625,9 +136669,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -147125,7 +147171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.625
+      value: 0.221
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -147133,7 +147179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.76
+      value: -2.666
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -152955,9 +153001,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -158786,9 +158834,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -159101,9 +159151,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -167144,9 +167196,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
-  winSound: {fileID: 0}
+  winSound: {fileID: 8300000, guid: 106a79937806544489daae1122848335, type: 3}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -167163,7 +167217,7 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   playerHitSound: {fileID: 0}
-  playerKillDelay: 0.6
+  playerKillDelay: 0.3
   restartDelay: 1.5
 --- !u!4 &1307759665 stripped
 Transform:
@@ -168440,9 +168494,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -169965,9 +170021,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -174973,9 +175031,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -197511,9 +197571,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -198608,9 +198670,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -199660,9 +199724,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -217820,9 +217886,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -223537,9 +223605,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -243251,9 +243321,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -251989,9 +252061,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -256704,9 +256778,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -258152,6 +258228,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 498052686, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
+      propertyPath: winSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 106a79937806544489daae1122848335, type: 3}
+    - target: {fileID: 498052686, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
+      propertyPath: gunShotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 697da49f162580c4b9b85cad409b1545, type: 3}
     - target: {fileID: 498052687, guid: 2dc336d355d5e1c4b9d598078653a0ae, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -259817,9 +259901,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -259910,9 +259996,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -268297,9 +268385,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02
@@ -268662,9 +268752,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayLength: 0.12
+  gunShotSound: {fileID: 0}
   winDelay: 1.2
   winSound: {fileID: 0}
   winParticles: {fileID: 0}
+  winSoundVolume: 0.4
   tolerance: 0.02
   maxNoContactTime: 0.6
   minTimeBetweenSamples: 0.02

@@ -8,27 +8,37 @@ using UnityEngine.SceneManagement;
 public class CutChecker : MonoBehaviour
 {
     [Header("Needle / stamp")]
-    public Transform needleTip;              // ������� � Inspector
+    public Transform needleTip;            
     public LayerMask stampLayer;
     public float rayLength = 0.12f;
+
+    [Header("Gunshot")]
+    public AudioClip gunShotSound;
+
 
     [Header("Success / Win")]
     public float winDelay = 1.2f;
     public AudioClip winSound;
     public ParticleSystem winParticles;
+    [Header("Win sound")]
+    [Range(0f, 1f)]
+    public float winSoundVolume = 0.4f;
+
+    bool winSoundPlayed = false;
+
 
     [Header("Tolerance / timing")]
-    public float tolerance = 0.02f;          // ���������� ��������� �� �����
-    public float maxNoContactTime = 0.6f;    // ���� ���� �� �������� ������ ������ ����� - consider miss
+    public float tolerance = 0.02f;          
+    public float maxNoContactTime = 0.6f;    
     public float minTimeBetweenSamples = 0.02f;
 
     [Header("Miss settings")]
-    public int maxAllowedMisses = 3;         // �� 3�� � ��������� � ������
-    public float missCooldown = 0.6f;        // ����������� ����� ����� ������������ ���������
+    public int maxAllowedMisses = 3;         
+    public float missCooldown = 0.6f;        
     public bool resetMissesOnSuccessfulHit = false;
 
     [Header("Visual feedback (darken)")]
-    public Renderer candyRenderer;           // �������� renderer �������� (���������)
+    public Renderer candyRenderer;         
     [Range(0f, 1f)] public float darkOnFirstMiss = 0.25f;
     [Range(0f, 1f)] public float darkOnSecondMiss = 0.55f;
     [Range(0f, 1f)] public float darkOnThirdMiss = 0.95f;
@@ -41,6 +51,7 @@ public class CutChecker : MonoBehaviour
     public AudioClip breakSound;
     public AudioClip playerHitSound;
     public float playerKillDelay = 0.6f;
+    bool gunShotPlayed = false;
 
     [Header("Restart")]
     [Tooltip("�������������� �������� ����� ������������ ����� ����� death-handling")]
@@ -137,42 +148,37 @@ public class CutChecker : MonoBehaviour
         UpdateDarknessLerp();
     }
 
-    // public helper used by NeedleCollisionLogger fallback
+    
     public void NotifyCookieContact()
     {
         RegisterMiss("Cookie sustained contact (logger)", true);
     }
 
-    // --- PUBLIC API: ProcessWorldHit overloads ----------------
-    // Called by NeedleCollisionLogger: prefer overload with collider
     public void ProcessWorldHit(Vector3 worldPoint, Collider hitCollider)
     {
         if (!active || failed) return;
         if (contour == null) contour = GetComponent<StampContour>();
         if (contour == null) { Debug.LogWarning("CutChecker.ProcessWorldHit: contour == null"); return; }
 
-        // convert to contour-local
+
         Vector3 localHit = contour.transform != null ? contour.transform.InverseTransformPoint(worldPoint) : transform.InverseTransformPoint(worldPoint);
 
-        // If we have a direct collider, try direct handle (this will check exact ContourPoint component)
+       
         if (hitCollider != null)
         {
             bool handled = TryHandleDirectContourCollider(hitCollider);
             if (handled) return;
         }
 
-        // also run the distance-based path check (fallback)
+        
         ProcessHitLocal(localHit, hitCollider);
     }
 
-    // Backward-compatible single-arg version (calls new overload)
+   
     public void ProcessWorldHit(Vector3 worldPoint)
     {
         ProcessWorldHit(worldPoint, null);
     }
-    // ------------------------------------------------------------------
-
-    // Existing processing (distance-based)
     void ProcessHitLocal(Vector3 localHit, Collider hitCollider)
     {
         if (contour == null) { Debug.LogWarning("CutChecker: contour null"); return; }
@@ -187,7 +193,7 @@ public class CutChecker : MonoBehaviour
 
         Debug.Log($"CutChecker: Closest idx {idx} dist {dist:F4} tol {tolerance:F4}");
 
-        // check ContourPoint type if present
+       
         Transform pointTransform = contour.contourPoints[idx];
         var cp = pointTransform.GetComponent<ContourPoint>();
         if (cp != null)
@@ -248,12 +254,12 @@ public class CutChecker : MonoBehaviour
         }
     }
 
-    // ���������� true ���� ��������� ��� (� ���������� ��������� �� ���������)
+   
     bool TryHandleDirectContourCollider(Collider hitCollider)
     {
         if (hitCollider == null) return false;
 
-        // ��������� ����� ContourPoint ��������� � ���������
+       
         var contourPointComp = hitCollider.GetComponentInParent<ContourPoint>();
         if (contourPointComp != null)
         {
@@ -264,7 +270,7 @@ public class CutChecker : MonoBehaviour
                 int idx = sc.contourPoints.IndexOf(pt);
                 if (idx >= 0 && !visited[idx])
                 {
-                    // ���� ��� ����������� ��� � ������ (force)
+                    
                     if (contourPointComp.pointType != ContourPoint.PointType.Main)
                     {
                         contourPointComp.MarkAsMissed();
@@ -292,7 +298,6 @@ public class CutChecker : MonoBehaviour
             }
         }
 
-        // else: �� ����������� ������ ������ ��������� ����� � �� ����������
         return false;
     }
 
@@ -371,23 +376,32 @@ public class CutChecker : MonoBehaviour
 
     void TriggerFinalFail()
     {
-        Debug.LogError("CutChecker: FINAL FAIL (max misses) � breaking candy and killing player.");
+        if (!gunShotPlayed && gunShotSound != null && Camera.main != null)
+        {
+            gunShotPlayed = true;
+            AudioSource.PlayClipAtPoint(gunShotSound, Camera.main.transform.position, 0.3f);
+        }
+
+        Debug.LogError("CutChecker: FINAL FAIL (max misses) – breaking candy and killing player.");
+
         failed = true;
         active = false;
 
-        if (breakParticles != null && candyRoot != null) Instantiate(breakParticles, candyRoot.position, Quaternion.identity);
-        if (breakSound != null && candyRoot != null) AudioSource.PlayClipAtPoint(breakSound, candyRoot.position);
+        if (breakParticles != null && candyRoot != null)
+            Instantiate(breakParticles, candyRoot.position, Quaternion.identity);
 
-        if (candyRoot != null) candyRoot.gameObject.SetActive(false);
+        if (breakSound != null && candyRoot != null)
+            AudioSource.PlayClipAtPoint(breakSound, candyRoot.position);
+
+        if (candyRoot != null)
+            candyRoot.gameObject.SetActive(false);
 
         if (brokenCandyPrefab != null && candyRoot != null)
-        {
             Instantiate(brokenCandyPrefab, candyRoot.position, candyRoot.rotation);
-        }
 
-        // call HandlePlayerHit after playerKillDelay
         Invoke(nameof(HandlePlayerHit), playerKillDelay);
     }
+
 
     void HandlePlayerHit()
     {
