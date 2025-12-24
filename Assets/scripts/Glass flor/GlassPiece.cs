@@ -30,6 +30,10 @@ public class GlassPiece : MonoBehaviour
     [Tooltip("÷вет подсветки при наведении/выборе")]
     public Color highlightColor = Color.cyan;
 
+    [Header("Highlight Colors")]
+    public Color breakableHighlightColor = Color.red;
+    public Color safeHighlightColor = Color.green;
+
     // internal state
     bool touchedByPlayer = false; // был ли контакт с игроком (чтобы уведомить контроллер 1 раз)
     bool broken = false;          // действительно ли плитка сломана (чтобы не ломать повторно)
@@ -189,48 +193,50 @@ public class GlassPiece : MonoBehaviour
 
     // ѕодсветка плитки (вкл/выкл)
     public void Highlight(bool on)
-    {
-        if (renderers == null || renderers.Length == 0) return;
-        if (on)
-        {
-            for (int i = 0; i < renderers.Length; i++)
-            {
-                var r = renderers[i];
-                var mats = r.materials; // создает экземпл€ры материалов
-                for (int m = 0; m < mats.Length; m++)
-                {
-                    var mat = mats[m];
-                    if (mat != null)
-                    {
-                        if (mat.HasProperty("_Color"))
-                            mat.color = highlightColor;
-                        else if (mat.HasProperty("_BaseColor"))
-                            mat.SetColor("_BaseColor", highlightColor);
+{
+    if (renderers == null || renderers.Length == 0) return;
 
-                        if (mat.HasProperty("_EmissionColor"))
-                        {
-                            mat.EnableKeyword("_EMISSION");
-                            mat.SetColor("_EmissionColor", highlightColor * 0.5f);
-                        }
-                    }
-                }
-                r.materials = mats;
-            }
-        }
-        else
+    if (on)
+    {
+        Color useColor = isBreakable ? breakableHighlightColor : safeHighlightColor;
+
+        for (int i = 0; i < renderers.Length; i++)
         {
-            for (int i = 0; i < renderers.Length; i++)
+            var r = renderers[i];
+            var mats = r.materials;
+
+            for (int m = 0; m < mats.Length; m++)
             {
-                var r = renderers[i];
-                if (r == null) continue;
-                if (i < originalMaterials.Count)
+                var mat = mats[m];
+                if (mat == null) continue;
+
+                if (mat.HasProperty("_Color"))
+                    mat.color = useColor;
+                else if (mat.HasProperty("_BaseColor"))
+                    mat.SetColor("_BaseColor", useColor);
+
+                if (mat.HasProperty("_EmissionColor"))
                 {
-                    var orig = originalMaterials[i];
-                    r.materials = orig;
+                    mat.EnableKeyword("_EMISSION");
+                    mat.SetColor("_EmissionColor", useColor * 0.5f);
                 }
             }
+
+            r.materials = mats;
         }
     }
+    else
+    {
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            var r = renderers[i];
+            if (r == null) continue;
+            if (i < originalMaterials.Count)
+                r.materials = originalMaterials[i];
+        }
+    }
+}
+
 
     public bool IsBroken() => broken;
     public bool WasTouchedByPlayer() => touchedByPlayer;

@@ -398,6 +398,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &59666096
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +908,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &155325049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1549,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &199664313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1732,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 1, g: 0, b: 0, a: 1}
+  safeHighlightColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &219410066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2204,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &284874733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,6 +2754,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3127728407712097238, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3127728407712097239, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2770,7 +2784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.62
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2778,7 +2792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.94
+      value: -19.79
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3182,6 +3196,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &416194226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,6 +3914,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &497262289
 GameObject:
   m_ObjectHideFlags: 0
@@ -4672,6 +4690,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &577986039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4789,6 +4809,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &601797842
 GameObject:
   m_ObjectHideFlags: 0
@@ -6852,30 +6874,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &902892107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902892094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fffa45d47435fd342a3537af50f02b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftController: {fileID: 1993964609}
-  rightController: {fileID: 874269473}
-  jumpDuration: 0.6
-  arcHeight: 1
-  maxSelectDistance: 6
-  glassLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  useGripButton: 1
-  playerRoot: {fileID: 902892095}
-  playerRigidbody: {fileID: 902892105}
-  landingYOffset: 0.05
 --- !u!114 &902892108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8262,6 +8260,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &1098774697
 GameObject:
   m_ObjectHideFlags: 0
@@ -8945,6 +8945,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &1259412884
 GameObject:
   m_ObjectHideFlags: 0
@@ -10607,6 +10609,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &1681068981
 GameObject:
   m_ObjectHideFlags: 0
@@ -10881,6 +10885,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &1697307866
 GameObject:
   m_ObjectHideFlags: 0
@@ -11865,6 +11871,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &1839414170
 GameObject:
   m_ObjectHideFlags: 0
@@ -12568,7 +12576,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e7401beee1c48b440adeb38101ce0a39, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 45eee753fc9ded84e97a731642cd2a38, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -13863,6 +13871,8 @@ MonoBehaviour:
   breakParticles: {fileID: 0}
   breakSound: {fileID: 0}
   highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  breakableHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  safeHighlightColor: {r: 0.39215687, g: 1, b: 1, a: 1}
 --- !u!1 &2103371438
 GameObject:
   m_ObjectHideFlags: 0
