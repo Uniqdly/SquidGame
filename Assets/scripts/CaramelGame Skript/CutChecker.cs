@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+#if UNITY_EDITOR
+using UnityEditor;
 using UnityEditor.Timeline.Actions;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

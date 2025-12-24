@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\glass flor\\glasspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|c:\\users\\yuryc\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\squidgame\\assets\\scripts\\glass flor\\glasspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\glasspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\glass flor\\parabolicjumpselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glass flor\\parabolicjumpselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|c:\\users\\yuryc\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\squidgame\\assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\caramelgame skript\\cutchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED547B8-109C-E821-1E9C-7AC9D6756C4A}|Assembly-CSharp.csproj|C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\assets\\scripts\\caramelgame skript\\stampcontour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,11 +90,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ParabolicJumpSelector.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\ParabolicJumpSelector.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\ParabolicJumpSelector.cs",
@@ -102,8 +102,7 @@
               "RelativeToolTip": "Assets\\scripts\\Glass flor\\ParabolicJumpSelector.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAgwF4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T20:07:47.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-16T20:07:47.236Z"
             },
             {
               "$type": "Document",
@@ -119,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GlassPiece.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\Glass flor\\GlassPiece.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Glass flor\\GlassPiece.cs",
@@ -156,13 +155,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CutChecker.cs",
               "DocumentMoniker": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
               "ToolTip": "C:\\Users\\yuryc\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\SquidGame\\Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
               "RelativeToolTip": "Assets\\scripts\\CaramelGame Skript\\CutChecker.cs",
-              "ViewState": "AgIAABcBAAAAAAAAAAAiwDABAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-04T10:29:44.27Z",
               "EditorCaption": ""
